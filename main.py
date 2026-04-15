@@ -103,6 +103,15 @@ def run_pipeline(args):
 
     with extractor:
         fps = extractor.fps or 30.0
+        
+        # If live camera feed, default to 1 FPS capture (sustainable hardware rate) unless user forced something else explicitly.
+        if getattr(extractor, "is_live", False):
+            # args.sample_rate could be the default (which is usually small). 
+            # This ensures processing matches 1 frame per second of live time.
+            args.sample_rate = max(1, int(fps))
+            logger.info(f"Live camera detected: Processing rate locked to exactly 1 frame per second "
+                        f"(sampled every {args.sample_rate} original frames).")
+
         event_engine = EventEngine(fps=fps / args.sample_rate)
         metrics_computer = MetricsComputer(
             fps=fps / args.sample_rate,
@@ -223,6 +232,13 @@ def run_pipeline(args):
                 )
                 if video_writer:
                     video_writer.write(vis_frame)
+                
+                # Live View Window
+                import cv2
+                cv2.imshow("Neural Nexus Live View", vis_frame)
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    logger.info("Live View closed by user 'q' key. Stopping processing...")
+                    break
 
             # ── Progress logging ──────────────────────────────────────
             if frame_count % 50 == 0:
