@@ -1,0 +1,8474 @@
+{
+  "video": "test_1.mp4",
+  "total_frames_processed": 23,
+  "fps": 30.0,
+  "sample_rate": 1,
+  "effective_fps": 30.0,
+  "duration_seconds": 0.77,
+  "processing_time_seconds": 251.26,
+  "avg_inference_ms": 10909.8,
+  "device": "cpu",
+  "models_loaded": 9,
+  "timeline": [],
+  "frame_by_frame": [
+    {
+      "frame": 0,
+      "timestamp": 0.0,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.94,
+          "bbox": [
+            210,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.952,
+          "bbox": [
+            267,
+            390,
+            490,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.943,
+          "bbox": [
+            379,
+            438,
+            713,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            753,
+            411,
+            982,
+            717
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.931,
+          "bbox": [
+            1,
+            452,
+            374,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.923,
+          "bbox": [
+            866,
+            404,
+            1060,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.913,
+          "bbox": [
+            583,
+            385,
+            765,
+            546
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.905,
+          "bbox": [
+            514,
+            351,
+            625,
+            453
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.854,
+          "bbox": [
+            631,
+            343,
+            739,
+            424
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.85,
+          "bbox": [
+            226,
+            357,
+            342,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.832,
+          "bbox": [
+            724,
+            360,
+            872,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.822,
+          "bbox": [
+            1068,
+            331,
+            1180,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.782,
+          "bbox": [
+            353,
+            318,
+            420,
+            381
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.777,
+          "bbox": [
+            459,
+            341,
+            550,
+            474
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.77,
+          "bbox": [
+            899,
+            319,
+            998,
+            402
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.755,
+          "bbox": [
+            177,
+            337,
+            287,
+            437
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.68,
+          "bbox": [
+            784,
+            334,
+            860,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.657,
+          "bbox": [
+            1,
+            415,
+            170,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.649,
+          "bbox": [
+            512,
+            327,
+            566,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.599,
+          "bbox": [
+            1060,
+            363,
+            1188,
+            468
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.579,
+          "bbox": [
+            62,
+            321,
+            171,
+            396
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.439,
+          "bbox": [
+            576,
+            328,
+            640,
+            401
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.429,
+          "bbox": [
+            818,
+            319,
+            868,
+            368
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.421,
+          "bbox": [
+            1249,
+            343,
+            1280,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.4,
+          "bbox": [
+            855,
+            327,
+            909,
+            374
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.396,
+          "bbox": [
+            454,
+            326,
+            495,
+            364
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.394,
+          "bbox": [
+            1184,
+            337,
+            1279,
+            427
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.357,
+          "bbox": [
+            732,
+            302,
+            788,
+            356
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.847,
+          "bbox": [
+            964,
+            277,
+            1057,
+            391
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.825,
+          "bbox": [
+            263,
+            395,
+            475,
+            560
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.748,
+          "bbox": [
+            378,
+            436,
+            725,
+            697
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.729,
+          "bbox": [
+            1,
+            453,
+            392,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.638,
+          "bbox": [
+            749,
+            408,
+            992,
+            719
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.563,
+          "bbox": [
+            585,
+            383,
+            765,
+            537
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.471,
+          "bbox": [
+            273,
+            391,
+            478,
+            559
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.718,
+          "bbox": [
+            892,
+            276,
+            1055,
+            414
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "timestamp": 0.03,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.936,
+          "bbox": [
+            210,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.952,
+          "bbox": [
+            267,
+            390,
+            490,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            379,
+            438,
+            713,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.94,
+          "bbox": [
+            753,
+            411,
+            983,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            1,
+            452,
+            375,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.92,
+          "bbox": [
+            866,
+            404,
+            1061,
+            536
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.913,
+          "bbox": [
+            583,
+            385,
+            765,
+            547
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.9,
+          "bbox": [
+            514,
+            351,
+            625,
+            453
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.861,
+          "bbox": [
+            631,
+            343,
+            739,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.843,
+          "bbox": [
+            226,
+            358,
+            342,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.827,
+          "bbox": [
+            1067,
+            331,
+            1180,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.824,
+          "bbox": [
+            724,
+            361,
+            872,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.804,
+          "bbox": [
+            353,
+            318,
+            421,
+            381
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.781,
+          "bbox": [
+            898,
+            319,
+            999,
+            403
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.775,
+          "bbox": [
+            459,
+            340,
+            550,
+            474
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.749,
+          "bbox": [
+            175,
+            337,
+            286,
+            438
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.695,
+          "bbox": [
+            784,
+            334,
+            860,
+            407
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.692,
+          "bbox": [
+            1,
+            415,
+            172,
+            630
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.646,
+          "bbox": [
+            513,
+            327,
+            567,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.625,
+          "bbox": [
+            62,
+            321,
+            170,
+            394
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.528,
+          "bbox": [
+            818,
+            319,
+            868,
+            367
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.519,
+          "bbox": [
+            1061,
+            363,
+            1187,
+            469
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.429,
+          "bbox": [
+            407,
+            331,
+            478,
+            452
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.412,
+          "bbox": [
+            855,
+            327,
+            908,
+            374
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.411,
+          "bbox": [
+            454,
+            326,
+            494,
+            364
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.407,
+          "bbox": [
+            1185,
+            338,
+            1279,
+            427
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.403,
+          "bbox": [
+            1250,
+            343,
+            1280,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.398,
+          "bbox": [
+            573,
+            338,
+            636,
+            405
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.394,
+          "bbox": [
+            733,
+            302,
+            788,
+            356
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.844,
+          "bbox": [
+            965,
+            277,
+            1057,
+            391
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.825,
+          "bbox": [
+            263,
+            394,
+            475,
+            561
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.749,
+          "bbox": [
+            379,
+            436,
+            725,
+            697
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.732,
+          "bbox": [
+            0,
+            453,
+            393,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.656,
+          "bbox": [
+            748,
+            408,
+            992,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.57,
+          "bbox": [
+            585,
+            383,
+            765,
+            537
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.492,
+          "bbox": [
+            272,
+            391,
+            479,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.496,
+          "bbox": [
+            966,
+            276,
+            1058,
+            437
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.719,
+          "bbox": [
+            892,
+            276,
+            1055,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "timestamp": 0.07,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.932,
+          "bbox": [
+            211,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.954,
+          "bbox": [
+            267,
+            390,
+            489,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            379,
+            438,
+            713,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            754,
+            411,
+            984,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.932,
+          "bbox": [
+            1,
+            452,
+            375,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.917,
+          "bbox": [
+            867,
+            404,
+            1062,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.915,
+          "bbox": [
+            583,
+            385,
+            766,
+            546
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.901,
+          "bbox": [
+            515,
+            351,
+            626,
+            452
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.861,
+          "bbox": [
+            632,
+            343,
+            739,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.83,
+          "bbox": [
+            1069,
+            331,
+            1180,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.827,
+          "bbox": [
+            226,
+            357,
+            343,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.813,
+          "bbox": [
+            725,
+            361,
+            872,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.799,
+          "bbox": [
+            353,
+            318,
+            421,
+            381
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.793,
+          "bbox": [
+            898,
+            319,
+            999,
+            404
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.773,
+          "bbox": [
+            460,
+            340,
+            550,
+            466
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.762,
+          "bbox": [
+            172,
+            337,
+            286,
+            438
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.698,
+          "bbox": [
+            1,
+            414,
+            172,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.685,
+          "bbox": [
+            785,
+            334,
+            861,
+            407
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.66,
+          "bbox": [
+            513,
+            326,
+            569,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.638,
+          "bbox": [
+            63,
+            321,
+            168,
+            394
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.54,
+          "bbox": [
+            818,
+            319,
+            868,
+            368
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.499,
+          "bbox": [
+            1062,
+            363,
+            1187,
+            473
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.456,
+          "bbox": [
+            733,
+            302,
+            789,
+            356
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.414,
+          "bbox": [
+            855,
+            327,
+            908,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.408,
+          "bbox": [
+            408,
+            331,
+            478,
+            452
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.399,
+          "bbox": [
+            454,
+            326,
+            494,
+            364
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.373,
+          "bbox": [
+            1250,
+            343,
+            1280,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.371,
+          "bbox": [
+            572,
+            339,
+            635,
+            405
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.832,
+          "bbox": [
+            965,
+            277,
+            1057,
+            396
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.824,
+          "bbox": [
+            264,
+            394,
+            480,
+            560
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.751,
+          "bbox": [
+            379,
+            436,
+            725,
+            697
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.737,
+          "bbox": [
+            2,
+            454,
+            394,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.691,
+          "bbox": [
+            749,
+            407,
+            992,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.578,
+          "bbox": [
+            585,
+            383,
+            766,
+            544
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.404,
+          "bbox": [
+            723,
+            359,
+            824,
+            474
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.526,
+          "bbox": [
+            272,
+            391,
+            480,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.549,
+          "bbox": [
+            966,
+            276,
+            1058,
+            437
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.754,
+          "bbox": [
+            893,
+            276,
+            1056,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "timestamp": 0.1,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.935,
+          "bbox": [
+            211,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.955,
+          "bbox": [
+            268,
+            390,
+            491,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.941,
+          "bbox": [
+            380,
+            438,
+            713,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.936,
+          "bbox": [
+            755,
+            411,
+            985,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.935,
+          "bbox": [
+            1,
+            452,
+            376,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.914,
+          "bbox": [
+            583,
+            385,
+            766,
+            546
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.914,
+          "bbox": [
+            867,
+            404,
+            1063,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.899,
+          "bbox": [
+            515,
+            351,
+            627,
+            452
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.862,
+          "bbox": [
+            633,
+            343,
+            739,
+            424
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.835,
+          "bbox": [
+            1067,
+            331,
+            1181,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.82,
+          "bbox": [
+            226,
+            357,
+            343,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.811,
+          "bbox": [
+            898,
+            318,
+            1000,
+            403
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.804,
+          "bbox": [
+            725,
+            361,
+            873,
+            473
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.779,
+          "bbox": [
+            353,
+            318,
+            421,
+            380
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.776,
+          "bbox": [
+            172,
+            337,
+            287,
+            439
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.773,
+          "bbox": [
+            460,
+            340,
+            550,
+            467
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.706,
+          "bbox": [
+            1,
+            414,
+            173,
+            630
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.69,
+          "bbox": [
+            785,
+            334,
+            861,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.657,
+          "bbox": [
+            513,
+            326,
+            570,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.613,
+          "bbox": [
+            63,
+            321,
+            168,
+            394
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.551,
+          "bbox": [
+            733,
+            302,
+            789,
+            355
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.513,
+          "bbox": [
+            819,
+            319,
+            868,
+            368
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.439,
+          "bbox": [
+            1057,
+            363,
+            1189,
+            470
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.436,
+          "bbox": [
+            408,
+            331,
+            479,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.398,
+          "bbox": [
+            855,
+            327,
+            907,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.356,
+          "bbox": [
+            455,
+            327,
+            494,
+            364
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.832,
+          "bbox": [
+            965,
+            277,
+            1058,
+            396
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.827,
+          "bbox": [
+            264,
+            394,
+            477,
+            560
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.767,
+          "bbox": [
+            379,
+            436,
+            725,
+            697
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.75,
+          "bbox": [
+            1,
+            454,
+            394,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.693,
+          "bbox": [
+            749,
+            407,
+            991,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.6,
+          "bbox": [
+            585,
+            383,
+            766,
+            544
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.423,
+          "bbox": [
+            724,
+            359,
+            825,
+            473
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.522,
+          "bbox": [
+            272,
+            391,
+            481,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.631,
+          "bbox": [
+            965,
+            276,
+            1058,
+            436
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.762,
+          "bbox": [
+            893,
+            276,
+            1057,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "timestamp": 0.13,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.933,
+          "bbox": [
+            211,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.953,
+          "bbox": [
+            268,
+            390,
+            491,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.941,
+          "bbox": [
+            380,
+            437,
+            714,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.933,
+          "bbox": [
+            1,
+            452,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.928,
+          "bbox": [
+            756,
+            411,
+            986,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.915,
+          "bbox": [
+            584,
+            385,
+            766,
+            546
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.912,
+          "bbox": [
+            867,
+            404,
+            1063,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.892,
+          "bbox": [
+            517,
+            351,
+            630,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.859,
+          "bbox": [
+            634,
+            343,
+            739,
+            424
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.833,
+          "bbox": [
+            1068,
+            331,
+            1181,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.82,
+          "bbox": [
+            898,
+            319,
+            1000,
+            403
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.808,
+          "bbox": [
+            226,
+            357,
+            344,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.804,
+          "bbox": [
+            725,
+            361,
+            873,
+            473
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.804,
+          "bbox": [
+            169,
+            337,
+            288,
+            442
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.767,
+          "bbox": [
+            460,
+            341,
+            551,
+            474
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.737,
+          "bbox": [
+            353,
+            318,
+            421,
+            381
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.716,
+          "bbox": [
+            1,
+            414,
+            173,
+            630
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.663,
+          "bbox": [
+            787,
+            334,
+            861,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.648,
+          "bbox": [
+            514,
+            326,
+            571,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.626,
+          "bbox": [
+            64,
+            320,
+            167,
+            393
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.576,
+          "bbox": [
+            1063,
+            363,
+            1188,
+            473
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.575,
+          "bbox": [
+            733,
+            302,
+            790,
+            355
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.427,
+          "bbox": [
+            819,
+            319,
+            869,
+            368
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.418,
+          "bbox": [
+            408,
+            331,
+            479,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.409,
+          "bbox": [
+            855,
+            327,
+            908,
+            373
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.83,
+          "bbox": [
+            966,
+            277,
+            1058,
+            397
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.827,
+          "bbox": [
+            265,
+            393,
+            478,
+            560
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.773,
+          "bbox": [
+            380,
+            437,
+            726,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.743,
+          "bbox": [
+            2,
+            454,
+            394,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.7,
+          "bbox": [
+            749,
+            407,
+            992,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.608,
+          "bbox": [
+            583,
+            381,
+            767,
+            644
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.423,
+          "bbox": [
+            725,
+            359,
+            827,
+            474
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.527,
+          "bbox": [
+            272,
+            391,
+            481,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.634,
+          "bbox": [
+            965,
+            276,
+            1058,
+            433
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.745,
+          "bbox": [
+            893,
+            276,
+            1057,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "timestamp": 0.17,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.937,
+          "bbox": [
+            211,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.952,
+          "bbox": [
+            268,
+            390,
+            491,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            380,
+            437,
+            714,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            1,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.929,
+          "bbox": [
+            758,
+            411,
+            986,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.918,
+          "bbox": [
+            584,
+            385,
+            766,
+            546
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.913,
+          "bbox": [
+            868,
+            404,
+            1063,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.899,
+          "bbox": [
+            517,
+            351,
+            632,
+            452
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.86,
+          "bbox": [
+            635,
+            343,
+            740,
+            424
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.84,
+          "bbox": [
+            1066,
+            330,
+            1181,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.813,
+          "bbox": [
+            899,
+            319,
+            1000,
+            402
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.807,
+          "bbox": [
+            172,
+            337,
+            290,
+            446
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.803,
+          "bbox": [
+            226,
+            357,
+            344,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.801,
+          "bbox": [
+            461,
+            341,
+            551,
+            478
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.798,
+          "bbox": [
+            726,
+            360,
+            874,
+            473
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.754,
+          "bbox": [
+            354,
+            317,
+            421,
+            381
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.693,
+          "bbox": [
+            1,
+            414,
+            174,
+            630
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.649,
+          "bbox": [
+            789,
+            333,
+            861,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.641,
+          "bbox": [
+            514,
+            326,
+            570,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.603,
+          "bbox": [
+            733,
+            302,
+            789,
+            355
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.574,
+          "bbox": [
+            63,
+            320,
+            171,
+            394
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.479,
+          "bbox": [
+            1062,
+            360,
+            1188,
+            468
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.461,
+          "bbox": [
+            855,
+            327,
+            908,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.416,
+          "bbox": [
+            408,
+            331,
+            479,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.37,
+          "bbox": [
+            819,
+            319,
+            868,
+            368
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.821,
+          "bbox": [
+            966,
+            276,
+            1058,
+            403
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.831,
+          "bbox": [
+            265,
+            393,
+            478,
+            560
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.772,
+          "bbox": [
+            380,
+            438,
+            727,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.755,
+          "bbox": [
+            0,
+            454,
+            394,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.72,
+          "bbox": [
+            749,
+            407,
+            992,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.595,
+          "bbox": [
+            587,
+            383,
+            767,
+            539
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.432,
+          "bbox": [
+            627,
+            339,
+            745,
+            425
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.421,
+          "bbox": [
+            725,
+            359,
+            829,
+            474
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.544,
+          "bbox": [
+            272,
+            391,
+            482,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.608,
+          "bbox": [
+            965,
+            276,
+            1058,
+            429
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.742,
+          "bbox": [
+            894,
+            277,
+            1058,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "timestamp": 0.2,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.939,
+          "bbox": [
+            211,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.953,
+          "bbox": [
+            268,
+            390,
+            490,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            380,
+            437,
+            714,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.932,
+          "bbox": [
+            2,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.928,
+          "bbox": [
+            756,
+            407,
+            987,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.919,
+          "bbox": [
+            584,
+            386,
+            765,
+            547
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.91,
+          "bbox": [
+            869,
+            405,
+            1060,
+            534
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.905,
+          "bbox": [
+            517,
+            351,
+            633,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.864,
+          "bbox": [
+            635,
+            343,
+            740,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.835,
+          "bbox": [
+            1064,
+            330,
+            1182,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.8,
+          "bbox": [
+            899,
+            319,
+            1000,
+            402
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.796,
+          "bbox": [
+            174,
+            337,
+            290,
+            448
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.791,
+          "bbox": [
+            227,
+            358,
+            348,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.785,
+          "bbox": [
+            461,
+            341,
+            551,
+            471
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.777,
+          "bbox": [
+            726,
+            360,
+            874,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.768,
+          "bbox": [
+            354,
+            318,
+            421,
+            381
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.703,
+          "bbox": [
+            1,
+            414,
+            175,
+            630
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.638,
+          "bbox": [
+            790,
+            334,
+            861,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.611,
+          "bbox": [
+            513,
+            326,
+            568,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.601,
+          "bbox": [
+            734,
+            302,
+            791,
+            356
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.506,
+          "bbox": [
+            64,
+            320,
+            177,
+            395
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.475,
+          "bbox": [
+            856,
+            327,
+            909,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.463,
+          "bbox": [
+            1062,
+            359,
+            1188,
+            468
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.399,
+          "bbox": [
+            1185,
+            338,
+            1280,
+            430
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.354,
+          "bbox": [
+            408,
+            331,
+            479,
+            451
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.824,
+          "bbox": [
+            966,
+            276,
+            1058,
+            410
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.829,
+          "bbox": [
+            265,
+            393,
+            478,
+            561
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.761,
+          "bbox": [
+            379,
+            438,
+            728,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.756,
+          "bbox": [
+            0,
+            454,
+            394,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.719,
+          "bbox": [
+            749,
+            406,
+            991,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.609,
+          "bbox": [
+            587,
+            382,
+            767,
+            534
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.45,
+          "bbox": [
+            627,
+            339,
+            746,
+            425
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.417,
+          "bbox": [
+            726,
+            359,
+            830,
+            474
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.523,
+          "bbox": [
+            272,
+            391,
+            482,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.604,
+          "bbox": [
+            964,
+            275,
+            1059,
+            429
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.735,
+          "bbox": [
+            894,
+            277,
+            1058,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "timestamp": 0.23,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.932,
+          "bbox": [
+            212,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.951,
+          "bbox": [
+            268,
+            390,
+            489,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            380,
+            437,
+            714,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.932,
+          "bbox": [
+            2,
+            453,
+            376,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.932,
+          "bbox": [
+            755,
+            407,
+            987,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.921,
+          "bbox": [
+            585,
+            386,
+            766,
+            547
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.908,
+          "bbox": [
+            869,
+            405,
+            1060,
+            534
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.901,
+          "bbox": [
+            517,
+            350,
+            632,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.867,
+          "bbox": [
+            636,
+            344,
+            739,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.823,
+          "bbox": [
+            1064,
+            330,
+            1183,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.81,
+          "bbox": [
+            461,
+            341,
+            551,
+            477
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.794,
+          "bbox": [
+            899,
+            319,
+            1001,
+            403
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.794,
+          "bbox": [
+            175,
+            337,
+            291,
+            448
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.792,
+          "bbox": [
+            726,
+            360,
+            874,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.782,
+          "bbox": [
+            227,
+            358,
+            348,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.768,
+          "bbox": [
+            354,
+            318,
+            422,
+            380
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.722,
+          "bbox": [
+            1,
+            414,
+            176,
+            630
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.621,
+          "bbox": [
+            514,
+            326,
+            567,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.608,
+          "bbox": [
+            790,
+            334,
+            861,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.49,
+          "bbox": [
+            733,
+            302,
+            790,
+            355
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.489,
+          "bbox": [
+            64,
+            320,
+            175,
+            394
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.472,
+          "bbox": [
+            856,
+            327,
+            909,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.439,
+          "bbox": [
+            1061,
+            364,
+            1192,
+            475
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.395,
+          "bbox": [
+            1186,
+            337,
+            1280,
+            429
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.824,
+          "bbox": [
+            967,
+            276,
+            1058,
+            397
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.827,
+          "bbox": [
+            265,
+            393,
+            479,
+            561
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.767,
+          "bbox": [
+            379,
+            438,
+            730,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.758,
+          "bbox": [
+            0,
+            454,
+            394,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.725,
+          "bbox": [
+            749,
+            406,
+            991,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.611,
+          "bbox": [
+            587,
+            382,
+            767,
+            532
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.441,
+          "bbox": [
+            625,
+            339,
+            746,
+            425
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.433,
+          "bbox": [
+            726,
+            359,
+            830,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.488,
+          "bbox": [
+            272,
+            392,
+            482,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.614,
+          "bbox": [
+            965,
+            275,
+            1059,
+            429
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.715,
+          "bbox": [
+            895,
+            277,
+            1058,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "timestamp": 0.27,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.923,
+          "bbox": [
+            212,
+            190,
+            420,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.952,
+          "bbox": [
+            268,
+            390,
+            492,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            380,
+            437,
+            715,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            2,
+            453,
+            376,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            756,
+            407,
+            987,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.922,
+          "bbox": [
+            585,
+            386,
+            766,
+            546
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.911,
+          "bbox": [
+            868,
+            404,
+            1064,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.903,
+          "bbox": [
+            517,
+            350,
+            632,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.865,
+          "bbox": [
+            636,
+            344,
+            739,
+            424
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.818,
+          "bbox": [
+            461,
+            341,
+            551,
+            476
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.804,
+          "bbox": [
+            727,
+            360,
+            874,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.798,
+          "bbox": [
+            1073,
+            330,
+            1183,
+            415
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.796,
+          "bbox": [
+            177,
+            337,
+            292,
+            449
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.786,
+          "bbox": [
+            227,
+            358,
+            348,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.783,
+          "bbox": [
+            899,
+            319,
+            1001,
+            403
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.767,
+          "bbox": [
+            354,
+            318,
+            422,
+            380
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.716,
+          "bbox": [
+            1,
+            414,
+            175,
+            630
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.648,
+          "bbox": [
+            514,
+            326,
+            567,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.59,
+          "bbox": [
+            790,
+            334,
+            861,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.526,
+          "bbox": [
+            1062,
+            363,
+            1190,
+            477
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.465,
+          "bbox": [
+            856,
+            327,
+            909,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.447,
+          "bbox": [
+            64,
+            320,
+            179,
+            394
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.431,
+          "bbox": [
+            409,
+            331,
+            480,
+            450
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.412,
+          "bbox": [
+            734,
+            302,
+            790,
+            355
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.356,
+          "bbox": [
+            1187,
+            337,
+            1280,
+            429
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.822,
+          "bbox": [
+            966,
+            277,
+            1059,
+            399
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.822,
+          "bbox": [
+            264,
+            393,
+            480,
+            561
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.757,
+          "bbox": [
+            0,
+            454,
+            394,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.755,
+          "bbox": [
+            380,
+            438,
+            729,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.711,
+          "bbox": [
+            750,
+            405,
+            993,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.627,
+          "bbox": [
+            587,
+            382,
+            767,
+            535
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.448,
+          "bbox": [
+            726,
+            358,
+            831,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.419,
+          "bbox": [
+            626,
+            339,
+            745,
+            425
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.462,
+          "bbox": [
+            273,
+            392,
+            481,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.622,
+          "bbox": [
+            965,
+            275,
+            1059,
+            432
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.724,
+          "bbox": [
+            895,
+            277,
+            1058,
+            416
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "timestamp": 0.3,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.91,
+          "bbox": [
+            212,
+            190,
+            419,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.951,
+          "bbox": [
+            268,
+            390,
+            492,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.941,
+          "bbox": [
+            380,
+            437,
+            715,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.939,
+          "bbox": [
+            757,
+            410,
+            987,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            2,
+            453,
+            376,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.922,
+          "bbox": [
+            585,
+            386,
+            767,
+            546
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.914,
+          "bbox": [
+            870,
+            406,
+            1062,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.897,
+          "bbox": [
+            516,
+            350,
+            631,
+            452
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.857,
+          "bbox": [
+            635,
+            344,
+            740,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.832,
+          "bbox": [
+            461,
+            341,
+            550,
+            476
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.807,
+          "bbox": [
+            727,
+            360,
+            874,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.799,
+          "bbox": [
+            1088,
+            330,
+            1184,
+            414
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.784,
+          "bbox": [
+            354,
+            318,
+            421,
+            380
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.776,
+          "bbox": [
+            177,
+            337,
+            292,
+            450
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.769,
+          "bbox": [
+            227,
+            357,
+            348,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.763,
+          "bbox": [
+            899,
+            319,
+            1001,
+            403
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.683,
+          "bbox": [
+            1,
+            414,
+            175,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.676,
+          "bbox": [
+            514,
+            326,
+            567,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.621,
+          "bbox": [
+            790,
+            334,
+            860,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.552,
+          "bbox": [
+            1062,
+            364,
+            1192,
+            478
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.545,
+          "bbox": [
+            410,
+            330,
+            480,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.517,
+          "bbox": [
+            734,
+            302,
+            792,
+            356
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.427,
+          "bbox": [
+            857,
+            327,
+            909,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.396,
+          "bbox": [
+            1187,
+            337,
+            1280,
+            429
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.367,
+          "bbox": [
+            65,
+            320,
+            180,
+            394
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.826,
+          "bbox": [
+            966,
+            276,
+            1059,
+            405
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.822,
+          "bbox": [
+            264,
+            393,
+            483,
+            562
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.755,
+          "bbox": [
+            380,
+            437,
+            729,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.741,
+          "bbox": [
+            1,
+            454,
+            395,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.695,
+          "bbox": [
+            750,
+            405,
+            993,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.627,
+          "bbox": [
+            587,
+            382,
+            767,
+            534
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.467,
+          "bbox": [
+            725,
+            358,
+            830,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.458,
+          "bbox": [
+            273,
+            392,
+            481,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.59,
+          "bbox": [
+            965,
+            275,
+            1059,
+            432
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.713,
+          "bbox": [
+            895,
+            277,
+            1059,
+            417
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "timestamp": 0.33,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.903,
+          "bbox": [
+            212,
+            190,
+            420,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            268,
+            390,
+            493,
+            563
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.944,
+          "bbox": [
+            760,
+            410,
+            986,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.941,
+          "bbox": [
+            380,
+            437,
+            715,
+            696
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.933,
+          "bbox": [
+            2,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.92,
+          "bbox": [
+            585,
+            386,
+            767,
+            545
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.915,
+          "bbox": [
+            869,
+            405,
+            1066,
+            536
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.897,
+          "bbox": [
+            517,
+            350,
+            631,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.859,
+          "bbox": [
+            461,
+            341,
+            550,
+            476
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.858,
+          "bbox": [
+            635,
+            343,
+            740,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.823,
+          "bbox": [
+            727,
+            360,
+            875,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.806,
+          "bbox": [
+            1090,
+            330,
+            1184,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.792,
+          "bbox": [
+            354,
+            318,
+            421,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.782,
+          "bbox": [
+            173,
+            338,
+            292,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.773,
+          "bbox": [
+            900,
+            319,
+            1001,
+            401
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.752,
+          "bbox": [
+            227,
+            357,
+            348,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.682,
+          "bbox": [
+            1,
+            414,
+            175,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.682,
+          "bbox": [
+            514,
+            326,
+            567,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.626,
+          "bbox": [
+            791,
+            334,
+            860,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.6,
+          "bbox": [
+            410,
+            330,
+            480,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.561,
+          "bbox": [
+            1062,
+            364,
+            1191,
+            475
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.525,
+          "bbox": [
+            734,
+            302,
+            792,
+            356
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.42,
+          "bbox": [
+            857,
+            327,
+            909,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.388,
+          "bbox": [
+            750,
+            320,
+            798,
+            361
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.375,
+          "bbox": [
+            1187,
+            337,
+            1280,
+            428
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.352,
+          "bbox": [
+            65,
+            320,
+            180,
+            394
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.825,
+          "bbox": [
+            967,
+            277,
+            1059,
+            397
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.819,
+          "bbox": [
+            264,
+            393,
+            483,
+            562
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.755,
+          "bbox": [
+            380,
+            437,
+            730,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.743,
+          "bbox": [
+            1,
+            454,
+            395,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.695,
+          "bbox": [
+            751,
+            405,
+            993,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.631,
+          "bbox": [
+            587,
+            382,
+            767,
+            533
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.476,
+          "bbox": [
+            725,
+            358,
+            831,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.405,
+          "bbox": [
+            626,
+            339,
+            745,
+            424
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.467,
+          "bbox": [
+            273,
+            392,
+            482,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.559,
+          "bbox": [
+            965,
+            275,
+            1059,
+            431
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.723,
+          "bbox": [
+            895,
+            277,
+            1059,
+            416
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "timestamp": 0.37,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.906,
+          "bbox": [
+            212,
+            190,
+            420,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.951,
+          "bbox": [
+            760,
+            410,
+            987,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            268,
+            390,
+            493,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            380,
+            437,
+            716,
+            696
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.933,
+          "bbox": [
+            2,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.916,
+          "bbox": [
+            585,
+            386,
+            767,
+            545
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.916,
+          "bbox": [
+            870,
+            405,
+            1067,
+            536
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.891,
+          "bbox": [
+            517,
+            350,
+            631,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.869,
+          "bbox": [
+            461,
+            341,
+            550,
+            477
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.856,
+          "bbox": [
+            635,
+            343,
+            740,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.828,
+          "bbox": [
+            727,
+            360,
+            875,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.812,
+          "bbox": [
+            1090,
+            330,
+            1184,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.802,
+          "bbox": [
+            168,
+            338,
+            292,
+            452
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.787,
+          "bbox": [
+            900,
+            319,
+            1002,
+            401
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.784,
+          "bbox": [
+            354,
+            318,
+            421,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.758,
+          "bbox": [
+            227,
+            357,
+            348,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.732,
+          "bbox": [
+            1,
+            415,
+            175,
+            630
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.663,
+          "bbox": [
+            514,
+            326,
+            566,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.655,
+          "bbox": [
+            790,
+            334,
+            859,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.618,
+          "bbox": [
+            410,
+            332,
+            480,
+            449
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.533,
+          "bbox": [
+            1062,
+            364,
+            1191,
+            474
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.462,
+          "bbox": [
+            734,
+            302,
+            791,
+            356
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.395,
+          "bbox": [
+            1187,
+            337,
+            1280,
+            428
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.388,
+          "bbox": [
+            857,
+            328,
+            910,
+            373
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.365,
+          "bbox": [
+            752,
+            321,
+            798,
+            362
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.36,
+          "bbox": [
+            572,
+            336,
+            636,
+            404
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.822,
+          "bbox": [
+            967,
+            276,
+            1059,
+            396
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.819,
+          "bbox": [
+            264,
+            393,
+            482,
+            562
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.739,
+          "bbox": [
+            380,
+            437,
+            731,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.732,
+          "bbox": [
+            0,
+            455,
+            396,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.703,
+          "bbox": [
+            751,
+            405,
+            993,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.592,
+          "bbox": [
+            587,
+            382,
+            768,
+            536
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.466,
+          "bbox": [
+            725,
+            358,
+            832,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.494,
+          "bbox": [
+            272,
+            392,
+            483,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.535,
+          "bbox": [
+            965,
+            275,
+            1059,
+            427
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.732,
+          "bbox": [
+            895,
+            277,
+            1059,
+            417
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "timestamp": 0.4,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.9,
+          "bbox": [
+            212,
+            190,
+            420,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.952,
+          "bbox": [
+            760,
+            410,
+            987,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            268,
+            390,
+            492,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.943,
+          "bbox": [
+            381,
+            437,
+            716,
+            696
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.935,
+          "bbox": [
+            2,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.915,
+          "bbox": [
+            870,
+            405,
+            1068,
+            536
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.911,
+          "bbox": [
+            585,
+            386,
+            767,
+            544
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.885,
+          "bbox": [
+            517,
+            350,
+            631,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.873,
+          "bbox": [
+            461,
+            341,
+            550,
+            479
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.858,
+          "bbox": [
+            635,
+            343,
+            740,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.821,
+          "bbox": [
+            1093,
+            330,
+            1185,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.813,
+          "bbox": [
+            728,
+            360,
+            876,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.784,
+          "bbox": [
+            901,
+            320,
+            1002,
+            400
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.768,
+          "bbox": [
+            169,
+            338,
+            291,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.759,
+          "bbox": [
+            356,
+            318,
+            421,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.743,
+          "bbox": [
+            228,
+            357,
+            349,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.701,
+          "bbox": [
+            1,
+            415,
+            175,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.653,
+          "bbox": [
+            792,
+            334,
+            860,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.613,
+          "bbox": [
+            514,
+            326,
+            566,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.605,
+          "bbox": [
+            410,
+            332,
+            480,
+            449
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.548,
+          "bbox": [
+            1062,
+            365,
+            1192,
+            474
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.43,
+          "bbox": [
+            1188,
+            337,
+            1280,
+            429
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.402,
+          "bbox": [
+            572,
+            336,
+            637,
+            405
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.388,
+          "bbox": [
+            857,
+            328,
+            911,
+            374
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.386,
+          "bbox": [
+            734,
+            302,
+            792,
+            357
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.826,
+          "bbox": [
+            968,
+            276,
+            1059,
+            394
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.817,
+          "bbox": [
+            264,
+            393,
+            484,
+            562
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.746,
+          "bbox": [
+            380,
+            437,
+            731,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.723,
+          "bbox": [
+            0,
+            455,
+            397,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.7,
+          "bbox": [
+            751,
+            405,
+            994,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.599,
+          "bbox": [
+            588,
+            382,
+            768,
+            536
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.46,
+          "bbox": [
+            725,
+            357,
+            833,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.404,
+          "bbox": [
+            625,
+            339,
+            748,
+            426
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.512,
+          "bbox": [
+            272,
+            392,
+            483,
+            559
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.504,
+          "bbox": [
+            965,
+            275,
+            1059,
+            425
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.701,
+          "bbox": [
+            895,
+            277,
+            1059,
+            416
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.389,
+          "bbox": [
+            896,
+            277,
+            1059,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "timestamp": 0.43,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.906,
+          "bbox": [
+            212,
+            189,
+            420,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.954,
+          "bbox": [
+            760,
+            410,
+            988,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            268,
+            390,
+            491,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            381,
+            437,
+            716,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            2,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.918,
+          "bbox": [
+            871,
+            405,
+            1068,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.913,
+          "bbox": [
+            587,
+            385,
+            767,
+            544
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.889,
+          "bbox": [
+            516,
+            350,
+            629,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.859,
+          "bbox": [
+            462,
+            341,
+            550,
+            479
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.856,
+          "bbox": [
+            634,
+            343,
+            740,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.824,
+          "bbox": [
+            1095,
+            330,
+            1185,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.812,
+          "bbox": [
+            728,
+            360,
+            877,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.786,
+          "bbox": [
+            901,
+            320,
+            1002,
+            399
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.774,
+          "bbox": [
+            167,
+            338,
+            292,
+            450
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.746,
+          "bbox": [
+            355,
+            318,
+            421,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.723,
+          "bbox": [
+            229,
+            357,
+            350,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.672,
+          "bbox": [
+            2,
+            415,
+            175,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.635,
+          "bbox": [
+            792,
+            334,
+            860,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.605,
+          "bbox": [
+            515,
+            326,
+            565,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.589,
+          "bbox": [
+            410,
+            332,
+            480,
+            449
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.564,
+          "bbox": [
+            1062,
+            365,
+            1192,
+            471
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.42,
+          "bbox": [
+            1191,
+            337,
+            1280,
+            427
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.407,
+          "bbox": [
+            572,
+            336,
+            637,
+            405
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.368,
+          "bbox": [
+            857,
+            328,
+            911,
+            374
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.358,
+          "bbox": [
+            598,
+            323,
+            654,
+            361
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.831,
+          "bbox": [
+            968,
+            276,
+            1059,
+            393
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.821,
+          "bbox": [
+            265,
+            393,
+            482,
+            561
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.743,
+          "bbox": [
+            380,
+            437,
+            731,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.722,
+          "bbox": [
+            1,
+            455,
+            395,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.705,
+          "bbox": [
+            752,
+            405,
+            994,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.597,
+          "bbox": [
+            588,
+            382,
+            768,
+            534
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.447,
+          "bbox": [
+            726,
+            358,
+            834,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.403,
+          "bbox": [
+            626,
+            340,
+            747,
+            426
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.525,
+          "bbox": [
+            272,
+            393,
+            483,
+            558
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.435,
+          "bbox": [
+            966,
+            275,
+            1059,
+            425
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.663,
+          "bbox": [
+            895,
+            277,
+            1060,
+            416
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.411,
+          "bbox": [
+            897,
+            277,
+            1060,
+            415
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "timestamp": 0.47,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.91,
+          "bbox": [
+            212,
+            189,
+            421,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.955,
+          "bbox": [
+            760,
+            410,
+            988,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.949,
+          "bbox": [
+            269,
+            389,
+            492,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            381,
+            437,
+            716,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.935,
+          "bbox": [
+            2,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.918,
+          "bbox": [
+            871,
+            405,
+            1069,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.912,
+          "bbox": [
+            587,
+            384,
+            767,
+            544
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.891,
+          "bbox": [
+            517,
+            350,
+            631,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.875,
+          "bbox": [
+            462,
+            341,
+            551,
+            481
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.844,
+          "bbox": [
+            634,
+            343,
+            740,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.829,
+          "bbox": [
+            1095,
+            331,
+            1185,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.793,
+          "bbox": [
+            730,
+            360,
+            877,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.758,
+          "bbox": [
+            902,
+            320,
+            1003,
+            399
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.733,
+          "bbox": [
+            176,
+            336,
+            290,
+            444
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.715,
+          "bbox": [
+            355,
+            318,
+            421,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.715,
+          "bbox": [
+            229,
+            357,
+            350,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.68,
+          "bbox": [
+            2,
+            416,
+            176,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.64,
+          "bbox": [
+            791,
+            334,
+            857,
+            407
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.619,
+          "bbox": [
+            515,
+            326,
+            568,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.573,
+          "bbox": [
+            410,
+            332,
+            480,
+            449
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.564,
+          "bbox": [
+            1063,
+            365,
+            1193,
+            478
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.404,
+          "bbox": [
+            975,
+            358,
+            1114,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.398,
+          "bbox": [
+            1189,
+            337,
+            1280,
+            430
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.389,
+          "bbox": [
+            857,
+            328,
+            912,
+            374
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.386,
+          "bbox": [
+            572,
+            336,
+            637,
+            405
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.37,
+          "bbox": [
+            734,
+            302,
+            791,
+            356
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.357,
+          "bbox": [
+            597,
+            322,
+            654,
+            361
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.839,
+          "bbox": [
+            968,
+            276,
+            1059,
+            390
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.822,
+          "bbox": [
+            265,
+            393,
+            481,
+            561
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.758,
+          "bbox": [
+            380,
+            437,
+            729,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.728,
+          "bbox": [
+            1,
+            455,
+            395,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.706,
+          "bbox": [
+            753,
+            404,
+            994,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.59,
+          "bbox": [
+            588,
+            382,
+            768,
+            533
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.448,
+          "bbox": [
+            728,
+            358,
+            833,
+            476
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.539,
+          "bbox": [
+            273,
+            393,
+            482,
+            558
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.438,
+          "bbox": [
+            966,
+            275,
+            1059,
+            420
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.621,
+          "bbox": [
+            895,
+            277,
+            1060,
+            415
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.466,
+          "bbox": [
+            896,
+            277,
+            1060,
+            414
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "timestamp": 0.5,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.906,
+          "bbox": [
+            212,
+            189,
+            421,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.953,
+          "bbox": [
+            759,
+            410,
+            988,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.949,
+          "bbox": [
+            268,
+            390,
+            494,
+            561
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.942,
+          "bbox": [
+            381,
+            438,
+            716,
+            697
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            2,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.914,
+          "bbox": [
+            871,
+            405,
+            1069,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.914,
+          "bbox": [
+            587,
+            384,
+            767,
+            543
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.889,
+          "bbox": [
+            517,
+            350,
+            632,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.875,
+          "bbox": [
+            462,
+            341,
+            551,
+            481
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.831,
+          "bbox": [
+            1096,
+            331,
+            1186,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.828,
+          "bbox": [
+            631,
+            343,
+            740,
+            425
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.799,
+          "bbox": [
+            727,
+            360,
+            878,
+            471
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.746,
+          "bbox": [
+            905,
+            346,
+            1006,
+            423
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.718,
+          "bbox": [
+            229,
+            357,
+            350,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.711,
+          "bbox": [
+            184,
+            336,
+            291,
+            441
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.705,
+          "bbox": [
+            356,
+            318,
+            422,
+            378
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.659,
+          "bbox": [
+            2,
+            416,
+            176,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.631,
+          "bbox": [
+            792,
+            334,
+            857,
+            407
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.613,
+          "bbox": [
+            515,
+            326,
+            567,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.585,
+          "bbox": [
+            411,
+            332,
+            480,
+            449
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.49,
+          "bbox": [
+            1062,
+            363,
+            1195,
+            479
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.431,
+          "bbox": [
+            975,
+            358,
+            1115,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.416,
+          "bbox": [
+            1189,
+            337,
+            1280,
+            429
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.383,
+          "bbox": [
+            575,
+            327,
+            643,
+            401
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.38,
+          "bbox": [
+            858,
+            328,
+            913,
+            374
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.372,
+          "bbox": [
+            844,
+            365,
+            925,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.372,
+          "bbox": [
+            735,
+            302,
+            791,
+            356
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.843,
+          "bbox": [
+            969,
+            276,
+            1060,
+            390
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.829,
+          "bbox": [
+            266,
+            393,
+            481,
+            560
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.771,
+          "bbox": [
+            381,
+            438,
+            729,
+            695
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.726,
+          "bbox": [
+            1,
+            455,
+            396,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.686,
+          "bbox": [
+            754,
+            405,
+            995,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.593,
+          "bbox": [
+            588,
+            382,
+            768,
+            535
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.434,
+          "bbox": [
+            730,
+            358,
+            833,
+            477
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.563,
+          "bbox": [
+            273,
+            393,
+            481,
+            558
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.499,
+          "bbox": [
+            895,
+            277,
+            1060,
+            415
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.472,
+          "bbox": [
+            897,
+            277,
+            1059,
+            413
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "timestamp": 0.53,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.912,
+          "bbox": [
+            212,
+            189,
+            421,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            269,
+            390,
+            495,
+            561
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            759,
+            409,
+            988,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.941,
+          "bbox": [
+            381,
+            438,
+            716,
+            698
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.933,
+          "bbox": [
+            2,
+            453,
+            378,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.914,
+          "bbox": [
+            587,
+            385,
+            768,
+            544
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.913,
+          "bbox": [
+            871,
+            405,
+            1070,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.889,
+          "bbox": [
+            517,
+            350,
+            632,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.855,
+          "bbox": [
+            462,
+            340,
+            551,
+            478
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.825,
+          "bbox": [
+            1095,
+            331,
+            1186,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.823,
+          "bbox": [
+            630,
+            343,
+            740,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.803,
+          "bbox": [
+            726,
+            360,
+            878,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.746,
+          "bbox": [
+            902,
+            320,
+            1003,
+            399
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.716,
+          "bbox": [
+            230,
+            357,
+            352,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.704,
+          "bbox": [
+            355,
+            318,
+            422,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.697,
+          "bbox": [
+            186,
+            336,
+            292,
+            443
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.659,
+          "bbox": [
+            2,
+            416,
+            176,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.647,
+          "bbox": [
+            411,
+            331,
+            481,
+            448
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.645,
+          "bbox": [
+            515,
+            326,
+            567,
+            371
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.634,
+          "bbox": [
+            795,
+            333,
+            859,
+            407
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.484,
+          "bbox": [
+            1062,
+            363,
+            1196,
+            479
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.421,
+          "bbox": [
+            573,
+            336,
+            638,
+            405
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.412,
+          "bbox": [
+            1191,
+            337,
+            1280,
+            427
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.411,
+          "bbox": [
+            975,
+            358,
+            1114,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.407,
+          "bbox": [
+            59,
+            333,
+            202,
+            433
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.398,
+          "bbox": [
+            844,
+            364,
+            925,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.367,
+          "bbox": [
+            858,
+            328,
+            913,
+            375
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.355,
+          "bbox": [
+            735,
+            302,
+            791,
+            356
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.84,
+          "bbox": [
+            969,
+            276,
+            1060,
+            390
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.826,
+          "bbox": [
+            266,
+            392,
+            480,
+            560
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.758,
+          "bbox": [
+            381,
+            438,
+            730,
+            695
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.724,
+          "bbox": [
+            1,
+            455,
+            396,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.669,
+          "bbox": [
+            753,
+            405,
+            995,
+            715
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.554,
+          "bbox": [
+            588,
+            382,
+            768,
+            534
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.442,
+          "bbox": [
+            730,
+            358,
+            830,
+            476
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.558,
+          "bbox": [
+            273,
+            392,
+            481,
+            557
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.449,
+          "bbox": [
+            898,
+            277,
+            1059,
+            413
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.415,
+          "bbox": [
+            896,
+            278,
+            1060,
+            414
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "timestamp": 0.57,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.899,
+          "bbox": [
+            210,
+            188,
+            422,
+            309
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.951,
+          "bbox": [
+            758,
+            409,
+            989,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.948,
+          "bbox": [
+            269,
+            389,
+            492,
+            562
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.939,
+          "bbox": [
+            381,
+            438,
+            716,
+            698
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.931,
+          "bbox": [
+            2,
+            453,
+            378,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.915,
+          "bbox": [
+            587,
+            385,
+            768,
+            544
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.91,
+          "bbox": [
+            872,
+            405,
+            1070,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.887,
+          "bbox": [
+            517,
+            350,
+            633,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.874,
+          "bbox": [
+            462,
+            340,
+            551,
+            482
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.818,
+          "bbox": [
+            1096,
+            331,
+            1186,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.811,
+          "bbox": [
+            726,
+            360,
+            878,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.807,
+          "bbox": [
+            630,
+            343,
+            740,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.76,
+          "bbox": [
+            902,
+            320,
+            1003,
+            400
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.714,
+          "bbox": [
+            230,
+            356,
+            357,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.71,
+          "bbox": [
+            356,
+            318,
+            422,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.701,
+          "bbox": [
+            411,
+            331,
+            481,
+            448
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.66,
+          "bbox": [
+            516,
+            326,
+            567,
+            371
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.656,
+          "bbox": [
+            189,
+            335,
+            293,
+            447
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.616,
+          "bbox": [
+            2,
+            416,
+            176,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.611,
+          "bbox": [
+            795,
+            333,
+            859,
+            407
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.555,
+          "bbox": [
+            64,
+            325,
+            204,
+            429
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.464,
+          "bbox": [
+            573,
+            336,
+            638,
+            405
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.455,
+          "bbox": [
+            1062,
+            363,
+            1199,
+            479
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.426,
+          "bbox": [
+            976,
+            358,
+            1114,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.363,
+          "bbox": [
+            1192,
+            337,
+            1280,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.353,
+          "bbox": [
+            844,
+            365,
+            925,
+            451
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.832,
+          "bbox": [
+            969,
+            276,
+            1061,
+            392
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.819,
+          "bbox": [
+            266,
+            392,
+            481,
+            559
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.741,
+          "bbox": [
+            381,
+            438,
+            731,
+            695
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.719,
+          "bbox": [
+            2,
+            455,
+            396,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.617,
+          "bbox": [
+            754,
+            405,
+            995,
+            716
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.55,
+          "bbox": [
+            585,
+            380,
+            768,
+            648
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.474,
+          "bbox": [
+            735,
+            358,
+            825,
+            477
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.552,
+          "bbox": [
+            274,
+            392,
+            480,
+            557
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.443,
+          "bbox": [
+            899,
+            277,
+            1059,
+            412
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.402,
+          "bbox": [
+            897,
+            278,
+            1061,
+            414
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "timestamp": 0.6,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.906,
+          "bbox": [
+            211,
+            187,
+            422,
+            310
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.951,
+          "bbox": [
+            756,
+            409,
+            990,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.949,
+          "bbox": [
+            269,
+            389,
+            490,
+            561
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.939,
+          "bbox": [
+            381,
+            438,
+            716,
+            698
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.931,
+          "bbox": [
+            2,
+            453,
+            378,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.918,
+          "bbox": [
+            587,
+            385,
+            768,
+            543
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.908,
+          "bbox": [
+            872,
+            405,
+            1070,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.889,
+          "bbox": [
+            517,
+            350,
+            633,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.855,
+          "bbox": [
+            462,
+            340,
+            550,
+            479
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.829,
+          "bbox": [
+            1097,
+            330,
+            1186,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.812,
+          "bbox": [
+            726,
+            360,
+            878,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.796,
+          "bbox": [
+            631,
+            343,
+            740,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.788,
+          "bbox": [
+            902,
+            320,
+            1004,
+            399
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.719,
+          "bbox": [
+            356,
+            318,
+            423,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.713,
+          "bbox": [
+            411,
+            331,
+            481,
+            447
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.698,
+          "bbox": [
+            230,
+            357,
+            357,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.673,
+          "bbox": [
+            516,
+            326,
+            566,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.617,
+          "bbox": [
+            2,
+            416,
+            176,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.602,
+          "bbox": [
+            795,
+            332,
+            860,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.596,
+          "bbox": [
+            190,
+            335,
+            293,
+            446
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.592,
+          "bbox": [
+            64,
+            326,
+            205,
+            431
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.547,
+          "bbox": [
+            1063,
+            366,
+            1200,
+            486
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.452,
+          "bbox": [
+            574,
+            336,
+            638,
+            405
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.373,
+          "bbox": [
+            976,
+            358,
+            1115,
+            491
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.371,
+          "bbox": [
+            844,
+            364,
+            926,
+            452
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.359,
+          "bbox": [
+            1192,
+            337,
+            1280,
+            427
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.83,
+          "bbox": [
+            969,
+            276,
+            1061,
+            393
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.825,
+          "bbox": [
+            266,
+            392,
+            481,
+            559
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.738,
+          "bbox": [
+            381,
+            438,
+            731,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.725,
+          "bbox": [
+            2,
+            455,
+            395,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.578,
+          "bbox": [
+            585,
+            380,
+            768,
+            648
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.565,
+          "bbox": [
+            755,
+            406,
+            994,
+            718
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.504,
+          "bbox": [
+            732,
+            358,
+            823,
+            476
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.566,
+          "bbox": [
+            274,
+            393,
+            481,
+            557
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.397,
+          "bbox": [
+            898,
+            278,
+            1058,
+            412
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.359,
+          "bbox": [
+            897,
+            278,
+            1060,
+            414
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "timestamp": 0.63,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.884,
+          "bbox": [
+            211,
+            188,
+            422,
+            310
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.954,
+          "bbox": [
+            757,
+            410,
+            991,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.948,
+          "bbox": [
+            269,
+            389,
+            490,
+            561
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.94,
+          "bbox": [
+            381,
+            438,
+            717,
+            698
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            2,
+            453,
+            378,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.913,
+          "bbox": [
+            588,
+            385,
+            768,
+            543
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.907,
+          "bbox": [
+            872,
+            405,
+            1070,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.891,
+          "bbox": [
+            517,
+            350,
+            634,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.871,
+          "bbox": [
+            462,
+            340,
+            550,
+            481
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.82,
+          "bbox": [
+            1096,
+            330,
+            1187,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.807,
+          "bbox": [
+            726,
+            360,
+            879,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.782,
+          "bbox": [
+            631,
+            344,
+            741,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.752,
+          "bbox": [
+            902,
+            320,
+            1004,
+            400
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.741,
+          "bbox": [
+            357,
+            318,
+            423,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.721,
+          "bbox": [
+            230,
+            357,
+            356,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.717,
+          "bbox": [
+            411,
+            330,
+            481,
+            446
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.675,
+          "bbox": [
+            516,
+            326,
+            566,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.675,
+          "bbox": [
+            2,
+            415,
+            176,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.626,
+          "bbox": [
+            65,
+            323,
+            205,
+            430
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.608,
+          "bbox": [
+            191,
+            335,
+            293,
+            446
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.586,
+          "bbox": [
+            795,
+            332,
+            860,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.514,
+          "bbox": [
+            1063,
+            366,
+            1201,
+            486
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.434,
+          "bbox": [
+            576,
+            329,
+            641,
+            401
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.38,
+          "bbox": [
+            845,
+            364,
+            927,
+            450
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.367,
+          "bbox": [
+            975,
+            358,
+            1118,
+            491
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.831,
+          "bbox": [
+            969,
+            276,
+            1061,
+            394
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.824,
+          "bbox": [
+            264,
+            392,
+            479,
+            558
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.733,
+          "bbox": [
+            381,
+            438,
+            732,
+            695
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.722,
+          "bbox": [
+            3,
+            454,
+            395,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.539,
+          "bbox": [
+            585,
+            380,
+            769,
+            646
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.539,
+          "bbox": [
+            755,
+            406,
+            994,
+            718
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.523,
+          "bbox": [
+            731,
+            358,
+            823,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.566,
+          "bbox": [
+            273,
+            393,
+            481,
+            557
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.385,
+          "bbox": [
+            898,
+            277,
+            1058,
+            412
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.362,
+          "bbox": [
+            898,
+            278,
+            1061,
+            414
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "timestamp": 0.67,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.874,
+          "bbox": [
+            211,
+            187,
+            423,
+            310
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            757,
+            410,
+            991,
+            717
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            268,
+            389,
+            493,
+            560
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.939,
+          "bbox": [
+            380,
+            438,
+            717,
+            698
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.932,
+          "bbox": [
+            2,
+            453,
+            377,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.915,
+          "bbox": [
+            588,
+            385,
+            769,
+            543
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.907,
+          "bbox": [
+            872,
+            405,
+            1071,
+            535
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.899,
+          "bbox": [
+            517,
+            350,
+            633,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.87,
+          "bbox": [
+            463,
+            340,
+            550,
+            478
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.821,
+          "bbox": [
+            726,
+            360,
+            879,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.803,
+          "bbox": [
+            1097,
+            330,
+            1188,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.787,
+          "bbox": [
+            631,
+            343,
+            741,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.747,
+          "bbox": [
+            356,
+            318,
+            423,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.745,
+          "bbox": [
+            902,
+            320,
+            1004,
+            401
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.724,
+          "bbox": [
+            230,
+            356,
+            357,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.71,
+          "bbox": [
+            411,
+            329,
+            481,
+            448
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.699,
+          "bbox": [
+            66,
+            321,
+            207,
+            429
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.691,
+          "bbox": [
+            2,
+            415,
+            176,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.649,
+          "bbox": [
+            516,
+            327,
+            567,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.592,
+          "bbox": [
+            192,
+            335,
+            293,
+            446
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.557,
+          "bbox": [
+            793,
+            333,
+            859,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.467,
+          "bbox": [
+            1063,
+            365,
+            1201,
+            483
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.374,
+          "bbox": [
+            577,
+            329,
+            641,
+            401
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.366,
+          "bbox": [
+            975,
+            358,
+            1122,
+            489
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.827,
+          "bbox": [
+            969,
+            276,
+            1061,
+            395
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.82,
+          "bbox": [
+            264,
+            391,
+            481,
+            558
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.732,
+          "bbox": [
+            381,
+            439,
+            733,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.71,
+          "bbox": [
+            3,
+            454,
+            396,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.552,
+          "bbox": [
+            585,
+            380,
+            769,
+            646
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.525,
+          "bbox": [
+            755,
+            406,
+            995,
+            718
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.521,
+          "bbox": [
+            728,
+            358,
+            822,
+            475
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.571,
+          "bbox": [
+            273,
+            393,
+            482,
+            557
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.474,
+          "bbox": [
+            899,
+            277,
+            1059,
+            412
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.471,
+          "bbox": [
+            898,
+            278,
+            1062,
+            413
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "timestamp": 0.7,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.875,
+          "bbox": [
+            211,
+            187,
+            423,
+            310
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.95,
+          "bbox": [
+            268,
+            389,
+            494,
+            560
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.948,
+          "bbox": [
+            757,
+            410,
+            992,
+            717
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.937,
+          "bbox": [
+            380,
+            438,
+            717,
+            698
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.935,
+          "bbox": [
+            2,
+            453,
+            378,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.916,
+          "bbox": [
+            588,
+            384,
+            769,
+            542
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.907,
+          "bbox": [
+            872,
+            405,
+            1070,
+            534
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.899,
+          "bbox": [
+            518,
+            349,
+            633,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.889,
+          "bbox": [
+            463,
+            341,
+            551,
+            480
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.819,
+          "bbox": [
+            727,
+            360,
+            879,
+            472
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.805,
+          "bbox": [
+            1097,
+            330,
+            1188,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.795,
+          "bbox": [
+            631,
+            343,
+            741,
+            426
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.758,
+          "bbox": [
+            357,
+            318,
+            423,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.737,
+          "bbox": [
+            411,
+            329,
+            482,
+            446
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.732,
+          "bbox": [
+            903,
+            320,
+            1004,
+            400
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.723,
+          "bbox": [
+            230,
+            357,
+            357,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.717,
+          "bbox": [
+            2,
+            415,
+            177,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.713,
+          "bbox": [
+            67,
+            321,
+            206,
+            429
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.69,
+          "bbox": [
+            516,
+            327,
+            567,
+            372
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.588,
+          "bbox": [
+            193,
+            335,
+            293,
+            443
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.575,
+          "bbox": [
+            795,
+            333,
+            860,
+            408
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.548,
+          "bbox": [
+            1064,
+            365,
+            1202,
+            482
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.355,
+          "bbox": [
+            577,
+            328,
+            642,
+            400
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.83,
+          "bbox": [
+            969,
+            276,
+            1061,
+            394
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.815,
+          "bbox": [
+            264,
+            391,
+            479,
+            558
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.727,
+          "bbox": [
+            381,
+            439,
+            733,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.693,
+          "bbox": [
+            4,
+            454,
+            397,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.554,
+          "bbox": [
+            585,
+            379,
+            770,
+            646
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.52,
+          "bbox": [
+            729,
+            358,
+            822,
+            474
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.518,
+          "bbox": [
+            754,
+            406,
+            995,
+            718
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.564,
+          "bbox": [
+            273,
+            393,
+            482,
+            557
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.502,
+          "bbox": [
+            965,
+            275,
+            1061,
+            417
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.489,
+          "bbox": [
+            897,
+            278,
+            1062,
+            413
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.48,
+          "bbox": [
+            899,
+            277,
+            1060,
+            412
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "timestamp": 0.73,
+      "detections": [
+        {
+          "class_name": "blackBoard",
+          "confidence": 0.879,
+          "bbox": [
+            212,
+            187,
+            423,
+            310
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.951,
+          "bbox": [
+            758,
+            410,
+            992,
+            716
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.951,
+          "bbox": [
+            268,
+            389,
+            495,
+            560
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.938,
+          "bbox": [
+            380,
+            438,
+            717,
+            698
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.934,
+          "bbox": [
+            2,
+            453,
+            378,
+            719
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.915,
+          "bbox": [
+            588,
+            384,
+            769,
+            543
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.908,
+          "bbox": [
+            871,
+            405,
+            1070,
+            534
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.899,
+          "bbox": [
+            518,
+            349,
+            633,
+            451
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.892,
+          "bbox": [
+            463,
+            341,
+            550,
+            480
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.823,
+          "bbox": [
+            727,
+            360,
+            879,
+            473
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.815,
+          "bbox": [
+            1097,
+            330,
+            1188,
+            413
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.796,
+          "bbox": [
+            631,
+            343,
+            741,
+            427
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.754,
+          "bbox": [
+            230,
+            356,
+            359,
+            490
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.752,
+          "bbox": [
+            357,
+            318,
+            424,
+            379
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.735,
+          "bbox": [
+            411,
+            328,
+            482,
+            446
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.722,
+          "bbox": [
+            903,
+            320,
+            1004,
+            400
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.712,
+          "bbox": [
+            67,
+            321,
+            206,
+            429
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.709,
+          "bbox": [
+            2,
+            415,
+            177,
+            629
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.693,
+          "bbox": [
+            517,
+            327,
+            568,
+            371
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.618,
+          "bbox": [
+            795,
+            333,
+            860,
+            407
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.598,
+          "bbox": [
+            193,
+            335,
+            293,
+            443
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.525,
+          "bbox": [
+            1063,
+            365,
+            1202,
+            486
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.383,
+          "bbox": [
+            846,
+            363,
+            929,
+            450
+          ]
+        },
+        {
+          "class_name": "read",
+          "confidence": 0.355,
+          "bbox": [
+            577,
+            329,
+            642,
+            400
+          ]
+        },
+        {
+          "class_name": "stand",
+          "confidence": 0.828,
+          "bbox": [
+            969,
+            276,
+            1061,
+            393
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.819,
+          "bbox": [
+            264,
+            391,
+            479,
+            558
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.718,
+          "bbox": [
+            380,
+            439,
+            733,
+            696
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.69,
+          "bbox": [
+            4,
+            454,
+            396,
+            720
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.549,
+          "bbox": [
+            585,
+            379,
+            770,
+            646
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.53,
+          "bbox": [
+            756,
+            406,
+            995,
+            718
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.515,
+          "bbox": [
+            728,
+            357,
+            822,
+            474
+          ]
+        },
+        {
+          "class_name": "talk",
+          "confidence": 0.571,
+          "bbox": [
+            273,
+            393,
+            483,
+            557
+          ]
+        },
+        {
+          "class_name": "teacher",
+          "confidence": 0.466,
+          "bbox": [
+            965,
+            275,
+            1061,
+            419
+          ]
+        },
+        {
+          "class_name": "guide",
+          "confidence": 0.467,
+          "bbox": [
+            898,
+            278,
+            1062,
+            414
+          ]
+        },
+        {
+          "class_name": "answer",
+          "confidence": 0.453,
+          "bbox": [
+            899,
+            277,
+            1059,
+            413
+          ]
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "avg_engagement": 0.111,
+    "avg_participation": 0.598,
+    "avg_disruption": 0.232,
+    "avg_teacher_interaction": 0.652,
+    "dominant_state": "idle",
+    "state_distribution": {
+      "idle": 1.0
+    },
+    "total_frames_processed": 23
+  }
+}
