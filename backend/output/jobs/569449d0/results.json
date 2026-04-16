@@ -1,0 +1,79 @@
+{
+  "job_id": "569449d0",
+  "video": "test_2.mp4",
+  "total_frames_processed": 414,
+  "fps": 30.0,
+  "duration_seconds": 13.81,
+  "processing_time_seconds": 266.47,
+  "avg_inference_ms": 531.5,
+  "device": "cuda:0",
+  "models_loaded": 9,
+  "timeline": [
+    {
+      "timestamp": "00:00:04",
+      "frame": 148,
+      "seconds": 4.94,
+      "classroom_state": "idle",
+      "state_confidence": 0.5,
+      "engagement_score": 0.021,
+      "participation_rate": 0.101,
+      "disruption_index": 0.229,
+      "teacher_interaction_ratio": 0.664,
+      "active_events": [],
+      "tracked_entities": 24,
+      "student_summary": {
+        "participating": 5,
+        "distracted": 0,
+        "inactive": 18,
+        "total": 23
+      },
+      "teacher_signals": {
+        "present": true,
+        "engaging": true,
+        "at_board": false,
+        "teaching_mode": "interactive"
+      }
+    },
+    {
+      "timestamp": "00:00:09",
+      "frame": 297,
+      "seconds": 9.91,
+      "classroom_state": "idle",
+      "state_confidence": 0.5,
+      "engagement_score": 0.033,
+      "participation_rate": 0.147,
+      "disruption_index": 0.224,
+      "teacher_interaction_ratio": 0.768,
+      "active_events": [
+        "active_learning",
+        "group_discussion",
+        "potential_disruption"
+      ],
+      "tracked_entities": 17,
+      "student_summary": {
+        "participating": 5,
+        "distracted": 0,
+        "inactive": 11,
+        "total": 16
+      },
+      "teacher_signals": {
+        "present": true,
+        "engaging": true,
+        "at_board": false,
+        "teaching_mode": "interactive"
+      }
+    }
+  ],
+  "aggregate": {
+    "avg_engagement": 0.036,
+    "avg_participation": 0.166,
+    "avg_disruption": 0.221,
+    "avg_teacher_interaction": 0.8,
+    "dominant_state": "idle",
+    "state_distribution": {
+      "idle": 0.928,
+      "lecture_mode": 0.072
+    },
+    "total_frames_processed": 414
+  }
+}

@@ -20,6 +20,10 @@ import os
 import sys
 import time
 
+# Save reference to original cv2.imshow BEFORE ultralytics patches it
+import cv2 as _cv2
+_original_imshow = _cv2.imshow
+
 # Ensure project root is on the path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -234,9 +238,8 @@ def run_pipeline(args):
                     video_writer.write(vis_frame)
                 
                 # Live View Window
-                import cv2
-                cv2.imshow("Neural Nexus Live View", vis_frame)
-                if cv2.waitKey(1) & 0xFF == ord('q'):
+                _original_imshow("Neural Nexus Live View", vis_frame)
+                if _cv2.waitKey(1) & 0xFF == ord('q'):
                     logger.info("Live View closed by user 'q' key. Stopping processing...")
                     break
 

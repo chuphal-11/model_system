@@ -410,15 +410,18 @@ def _patch_modules():
     except ImportError:
         pass
 
-    # Now inject/override with our custom YOLOv7 classes
+    # Now inject our custom YOLOv7 classes, but ONLY if they don't already
+    # exist from the real yolov5 package (to avoid breaking Model/DetectionModel).
     for name, cls in _CUSTOM_CLASSES.items():
-        setattr(common_mod, name, cls)
-        setattr(yolo_mod, name, cls)
-        setattr(exp_mod, name, cls)
+        for mod in (common_mod, yolo_mod, exp_mod):
+            if not hasattr(mod, name):
+                setattr(mod, name, cls)
 
-    # Also add autopad
-    common_mod.autopad = autopad
-    yolo_mod.autopad = autopad
+    # Also add autopad if missing
+    if not hasattr(common_mod, "autopad"):
+        common_mod.autopad = autopad
+    if not hasattr(yolo_mod, "autopad"):
+        yolo_mod.autopad = autopad
 
     # Make sure models module references its submodules
     models_mod.common = common_mod
@@ -669,6 +672,27 @@ def load_custom_model(model_path, class_names, device="cpu",
         # Ensure model is in eval mode
         model.eval()
 
+        # Reset cached grid tensors in IDetect / Detect heads so they
+        # are recomputed to match the actual inference image dimensions.
+        # The yolov5 Detect.forward calls _make_grid which assigns into
+        # self.grid[i] and self.anchor_grid[i] as list elements. But the
+        # checkpoint may have saved anchor_grid as a registered buffer
+        # (tensor), causing shape mismatch on assignment. Convert both
+        # to lists and enable dynamic mode so grids regenerate properly.
+        for m in model.modules():
+            cls_name = type(m).__name__
+            if cls_name in ("IDetect", "Detect") and hasattr(m, "grid"):
+                m.grid = [torch.zeros(1)] * m.nl
+                # anchor_grid is often a registered buffer (tensor), but
+                # yolov5's _make_grid tries to assign list elements to it.
+                # Delete the buffer registration and replace with a list.
+                if 'anchor_grid' in dict(m.named_buffers()):
+                    del m._buffers['anchor_grid']
+                m.anchor_grid = [torch.zeros(1)] * m.nl
+                # Enable dynamic mode so grid is always recalculated
+                if hasattr(m, 'dynamic'):
+                    m.dynamic = True
+
         wrapper = YOLOv7ModelWrapper(
             model=model,
             class_names=class_names,
@@ -694,10 +718,11 @@ def load_person_detector(model_path, device="cpu", conf_threshold=0.30):
     try:
         from ultralytics import YOLO
         model = YOLO(model_path)
-        logger.info(f"  ✓ Loaded person detector: {os.path.basename(model_path)}")
+        model.to(device)
+        logger.info(f"  ✓ Loaded person detector: {os.path.basename(model_path)} (device={device})")
 
         def detect_persons(frame):
-            results = model(frame, verbose=False, conf=conf_threshold)
+            results = model(frame, verbose=False, conf=conf_threshold, device=device)
             detections = []
             for r in results:
                 for box in r.boxes:

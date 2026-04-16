@@ -1,0 +1,158 @@
+.main { max-width: 1400px; margin: 0 auto; padding: 40px 32px; }
+
+.header { margin-bottom: 32px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 12px; border: 1px solid var(--border-dark); border-radius: var(--radius); margin-bottom: 12px; }
+.title { font-size: 48px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; margin-bottom: 12px; }
+.subtitle { font-size: 16px; color: var(--text-secondary); max-width: 540px; line-height: 1.6; }
+
+/* Upload Zone */
+.uploadZone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 80px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.uploadZone:hover, .dragover { border-color: var(--accent); background: var(--accent-light); }
+.uploadIcon { margin-bottom: 20px; color: var(--text-muted); }
+.uploadTitle { font-size: 18px; font-weight: 700; letter-spacing: 0.06em; margin-bottom: 8px; }
+.uploadHint { font-size: 14px; color: var(--text-muted); }
+
+/* Processing */
+.processingCard {
+  background: var(--bg-card);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.processHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.processHeader h3 { font-size: 14px; font-weight: 700; letter-spacing: 0.05em; }
+.processPercent { font-family: var(--font-mono); font-size: 20px; font-weight: 700; }
+.progressBar { height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
+.progressFill { height: 100%; background: var(--accent); border-radius: 4px; transition: width 0.5s; }
+.processInfo { font-size: 13px; color: var(--text-muted); margin-top: 12px; font-family: var(--font-mono); }
+
+/* Error */
+.errorCard {
+  background: #fef2f2;
+  border: 2px solid var(--danger);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.errorCard h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.errorCard p { color: var(--text-secondary); margin-bottom: 16px; }
+.retryBtn {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 24px;
+  border: 2px solid var(--border-dark);
+  background: transparent;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+.retryBtn:hover { background: var(--bg-dark); color: var(--text-inverse); }
+
+/* Results */
+.results { animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.resultsHeader { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; }
+.resultsTitle { font-size: 24px; font-weight: 700; letter-spacing: 0.02em; }
+.resultsTime { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+
+.metricsGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+
+.metricCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.metricCard:hover { border-color: var(--border-dark); }
+.metricLabel { display: block; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 8px; }
+.metricValue { font-size: 32px; font-weight: 700; display: block; margin-bottom: 8px; }
+.green { color: var(--success); }
+.blue { color: var(--info); }
+.red { color: var(--danger); }
+.yellow { color: #92400e; }
+
+.metricBar { height: 4px; background: var(--bg-secondary); border-radius: 2px; overflow: hidden; }
+.metricBarFill { height: 100%; border-radius: 2px; transition: width 1s; }
+
+.stateBadge {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 8px 20px;
+  background: var(--accent);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+}
+
+/* Distribution */
+.distCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.distTitle { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+.distRow { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.distName { width: 140px; font-size: 14px; color: var(--text-secondary); text-transform: capitalize; }
+.distBar { flex: 1; height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
+.distFill { height: 100%; background: var(--bg-dark); border-radius: 4px; transition: width 1s; }
+.distPct { width: 50px; text-align: right; font-size: 13px; font-family: var(--font-mono); color: var(--text-muted); }
+
+/* Actions */
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.downloadBtn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: var(--text-primary);
+  border: 2px solid var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.downloadBtn:hover { background: var(--accent-hover); }
+.downloadBtnAlt {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-dark);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.downloadBtnAlt:hover { background: var(--bg-dark); color: var(--text-inverse); }
+.newBtn {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.newBtn:hover { border-color: var(--border-dark); }
+
+@media (max-width: 600px) {
+  .title { font-size: 32px; }
+  .metricsGrid { grid-template-columns: 1fr 1fr; }
+}

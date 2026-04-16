@@ -80,7 +80,8 @@ class SORTTracker:
             n_init=min_hits,
             nms_max_overlap=1.0,
             max_cosine_distance=0.2,   
-            nn_budget=100              
+            nn_budget=100,
+            embedder="mobilenet"
         )
 
     def update(self, person_detections, activity_detections=None, frame=None):

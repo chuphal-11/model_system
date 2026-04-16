@@ -1,0 +1,23 @@
+{
+  "job_id": "7d77e1fa",
+  "video": "test_1.mp4",
+  "total_frames_processed": 23,
+  "fps": 30.0,
+  "duration_seconds": 0.77,
+  "processing_time_seconds": 15.74,
+  "avg_inference_ms": 586.1,
+  "device": "cuda:0",
+  "models_loaded": 9,
+  "timeline": [],
+  "aggregate": {
+    "avg_engagement": 0.1,
+    "avg_participation": 0.543,
+    "avg_disruption": 0.212,
+    "avg_teacher_interaction": 0.565,
+    "dominant_state": "idle",
+    "state_distribution": {
+      "idle": 1.0
+    },
+    "total_frames_processed": 23
+  }
+}

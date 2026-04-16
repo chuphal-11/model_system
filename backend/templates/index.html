@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Nexus — AI Classroom Intelligence</title>
+    <meta name="description" content="AI-powered classroom behavior analysis with real-time insights">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ── Reset & Base ─────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --bg-card-hover: rgba(30, 41, 59, 0.8);
+            --border: rgba(99, 102, 241, 0.15);
+            --border-glow: rgba(99, 102, 241, 0.4);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #06b6d4;
+            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
+            --gradient-2: linear-gradient(135deg, #06b6d4, #10b981);
+            --glass: rgba(255, 255, 255, 0.03);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── Animated Background ──────────────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+            animation: bgShift 20s ease-in-out infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes bgShift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-5%, 5%) rotate(3deg); }
+        }
+
+        /* ── Header ──────────────────────────────────────── */
+        .header {
+            position: relative;
+            z-index: 10;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            background: rgba(10, 14, 26, 0.8);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .logo h1 {
+            font-size: 22px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .system-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .system-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ── Tabs ────────────────────────────────────────── */
+        .tabs {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            gap: 4px;
+            padding: 16px 40px 0;
+        }
+
+        .tab {
+            padding: 12px 28px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 12px 12px 0 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab:hover {
+            color: var(--text-secondary);
+            background: var(--glass);
+        }
+
+        .tab.active {
+            color: var(--text-primary);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-bottom: 1px solid transparent;
+            position: relative;
+            top: 1px;
+        }
+
+        .tab svg { width: 18px; height: 18px; }
+
+        /* ── Main Content ────────────────────────────────── */
+        .main {
+            position: relative;
+            z-index: 10;
+            padding: 0 40px 40px;
+        }
+
+        .tab-content {
+            display: none;
+            border: 1px solid var(--border);
+            border-radius: 0 var(--radius) var(--radius) var(--radius);
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            padding: 32px;
+            min-height: 500px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Upload Area ─────────────────────────────────── */
+        .upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 60px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .upload-zone svg {
+            width: 56px;
+            height: 56px;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .upload-zone h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .upload-zone p { color: var(--text-muted); font-size: 14px; }
+
+        .upload-zone input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* ── Processing Bar ──────────────────────────────── */
+        .processing-card {
+            display: none;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .processing-card.show { display: block; }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .progress-header h4 { font-size: 15px; font-weight: 600; }
+        .progress-header span { font-size: 13px; color: var(--text-muted); }
+
+        .progress-bar {
+            height: 6px;
+            background: rgba(99, 102, 241, 0.15);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-1);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        /* ── Results Dashboard ───────────────────────────── */
+        .results-section {
+            display: none;
+            margin-top: 24px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .results-section.show { display: block; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .metric-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+        }
+
+        .metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .metric-value.green { color: var(--success); }
+        .metric-value.blue { color: var(--info); }
+        .metric-value.yellow { color: var(--warning); }
+        .metric-value.red { color: var(--danger); }
+        .metric-value.purple { color: var(--accent-light); }
+
+        .state-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .state-distribution {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .state-distribution h4 {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .state-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .state-bar .name {
+            width: 140px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .state-bar .bar-bg {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .state-bar .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: var(--gradient-1);
+            transition: width 1s ease;
+        }
+
+        .state-bar .pct {
+            width: 50px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent-light);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* ── Camera Section ──────────────────────────────── */
+        .camera-controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4); }
+        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+        }
+
+        .btn-danger:hover { transform: translateY(-1px); }
+
+        .camera-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .camera-layout { grid-template-columns: 1fr; }
+        }
+
+        .camera-feed {
+            background: #000;
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .camera-feed img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .camera-placeholder {
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .camera-placeholder svg { width: 64px; height: 64px; margin-bottom: 12px; }
+
+        .camera-overlay {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .live-badge {
+            padding: 4px 12px;
+            background: var(--danger);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            display: none;
+            align-items: center;
+            gap: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        .live-badge.show { display: flex; }
+        .live-badge .rec-dot { width: 6px; height: 6px; background: white; border-radius: 50%; }
+
+        .inference-badge {
+            padding: 4px 12px;
+            background: rgba(0,0,0,0.6);
+            color: var(--text-secondary);
+            font-size: 11px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .inference-badge.show { display: block; }
+
+        /* ── Live Metrics Sidebar ───────────────────────── */
+        .live-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .live-metric-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+        }
+
+        .live-metric-card .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .live-metric-card .value {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .live-metric-card .sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .gauge-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .gauge-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+
+        /* ── Scrollbar ───────────────────────────────────── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        /* ── Responsive ──────────────────────────────────── */
+        @media (max-width: 768px) {
+            .header { padding: 16px 20px; }
+            .tabs { padding: 12px 20px 0; }
+            .main { padding: 0 20px 20px; }
+            .tab-content { padding: 20px; }
+            .upload-zone { padding: 40px 20px; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <!-- ── Header ──────────────────────────────────────── -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">🧠</div>
+            <div>
+                <h1>Neural Nexus</h1>
+                <span>AI Classroom Intelligence System</span>
+            </div>
+        </div>
+        <div class="system-badge" id="systemBadge">
+            <div class="dot"></div>
+            <span id="gpuLabel">Initializing…</span>
+        </div>
+    </header>
+
+    <!-- ── Tabs ────────────────────────────────────────── -->
+    <div class="tabs">
+        <button class="tab active" data-tab="upload" onclick="switchTab('upload')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Upload Video
+        </button>
+        <button class="tab" data-tab="camera" onclick="switchTab('camera')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            Live Camera
+        </button>
+    </div>
+
+    <!-- ── Main Content ────────────────────────────────── -->
+    <div class="main">
+
+        <!-- ── Upload Tab ──────────────────────────────── -->
+        <div class="tab-content active" id="tab-upload">
+            <div class="upload-zone" id="uploadZone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
+                <h3>Drop your classroom video here</h3>
+                <p>Supports MP4, AVI, MOV, MKV, WebM</p>
+                <input type="file" id="fileInput" accept=".mp4,.avi,.mov,.mkv,.webm">
+            </div>
+
+            <div class="processing-card" id="processingCard">
+                <div class="progress-header">
+                    <h4 id="processingTitle">⏳ Processing video…</h4>
+                    <span id="processingStatus">Queued</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection">
+                <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px;">📊 Analysis Results</h3>
+
+                <div class="metrics-grid" id="metricsGrid"></div>
+
+                <div class="state-distribution" id="stateDistribution" style="display:none;">
+                    <h4>State Distribution</h4>
+                    <div id="stateBars"></div>
+                </div>
+
+                <div style="display: flex; gap: 12px; margin-top: 16px;">
+                    <a class="download-btn" id="downloadVideoBtn" style="display:none;" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Annotated Video
+                    </a>
+                    <a class="download-btn" id="downloadJsonBtn" style="display:none;" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Download JSON Results
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Camera Tab ──────────────────────────────── -->
+        <div class="tab-content" id="tab-camera">
+            <div class="camera-controls">
+                <button class="btn btn-primary" id="startCameraBtn" onclick="startCamera()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                    Start Camera
+                </button>
+                <button class="btn btn-danger" id="stopCameraBtn" onclick="stopCamera()" style="display:none;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><rect x="9" y="9" width="6" height="6"/></svg>
+                    Stop Camera
+                </button>
+            </div>
+
+            <div class="camera-layout">
+                <div class="camera-feed" id="cameraFeed">
+                    <div class="camera-placeholder" id="cameraPlaceholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                        <p>Click "Start Camera" to begin</p>
+                    </div>
+                    <img id="cameraImg" style="display:none;" alt="Live Feed">
+                    <div class="camera-overlay">
+                        <div class="live-badge" id="liveBadge"><div class="rec-dot"></div> LIVE</div>
+                        <div class="inference-badge" id="inferenceBadge"></div>
+                    </div>
+                </div>
+
+                <div class="live-metrics">
+                    <div class="live-metric-card">
+                        <div class="label">Classroom State</div>
+                        <div class="value purple" id="liveState">—</div>
+                        <div class="sub" id="liveStateConf">Waiting for data</div>
+                    </div>
+                    <div class="live-metric-card">
+                        <div class="label">Engagement</div>
+                        <div class="value green" id="liveEngagement">—</div>
+                        <div class="gauge-bar"><div class="gauge-fill" id="engGauge" style="width:0%; background: var(--success);"></div></div>
+                    </div>
+                    <div class="live-metric-card">
+                        <div class="label">Participation</div>
+                        <div class="value blue" id="liveParticipation">—</div>
+                        <div class="gauge-bar"><div class="gauge-fill" id="partGauge" style="width:0%; background: var(--info);"></div></div>
+                    </div>
+                    <div class="live-metric-card">
+                        <div class="label">Disruption</div>
+                        <div class="value red" id="liveDisruption">—</div>
+                        <div class="gauge-bar"><div class="gauge-fill" id="disrGauge" style="width:0%; background: var(--danger);"></div></div>
+                    </div>
+                    <div class="live-metric-card">
+                        <div class="label">Teacher Interaction</div>
+                        <div class="value yellow" id="liveTeacher">—</div>
+                        <div class="gauge-bar"><div class="gauge-fill" id="teachGauge" style="width:0%; background: var(--warning);"></div></div>
+                    </div>
+                    <div class="live-metric-card">
+                        <div class="label">Tracked Persons</div>
+                        <div class="value" id="liveTracked" style="color: var(--text-primary);">—</div>
+                        <div class="sub" id="liveEvents">No events</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ================================================================
+    // State
+    // ================================================================
+    let currentJobId = null;
+    let pollInterval = null;
+    let cameraWs = null;
+
+    // ================================================================
+    // Tabs
+    // ================================================================
+    function switchTab(tabName) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.querySelector(`.tab[data-tab="${tabName}"]`).classList.add('active');
+        document.getElementById(`tab-${tabName}`).classList.add('active');
+    }
+
+    // ================================================================
+    // System Status
+    // ================================================================
+    async function fetchStatus() {
+        try {
+            const r = await fetch('/api/status');
+            const data = await r.json();
+            const label = document.getElementById('gpuLabel');
+            if (data.gpu_name) {
+                label.textContent = `${data.gpu_name} • ${data.models_loaded} models`;
+            } else {
+                label.textContent = `CPU • ${data.models_loaded} models`;
+            }
+        } catch(e) {
+            document.getElementById('gpuLabel').textContent = 'Connecting…';
+        }
+    }
+    fetchStatus();
+
+    // ================================================================
+    // File Upload
+    // ================================================================
+    const uploadZone = document.getElementById('uploadZone');
+    const fileInput = document.getElementById('fileInput');
+
+    uploadZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadZone.classList.add('dragover');
+    });
+    uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+    uploadZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadZone.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) uploadFile(e.dataTransfer.files[0]);
+    });
+
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) uploadFile(fileInput.files[0]);
+    });
+
+    async function uploadFile(file) {
+        // Reset UI
+        document.getElementById('resultsSection').classList.remove('show');
+        document.getElementById('processingCard').classList.add('show');
+        document.getElementById('progressFill').style.width = '0%';
+        document.getElementById('processingTitle').textContent = `⏳ Uploading ${file.name}…`;
+        document.getElementById('processingStatus').textContent = 'Uploading';
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const r = await fetch('/api/upload', { method: 'POST', body: formData });
+            const data = await r.json();
+
+            if (data.error) {
+                document.getElementById('processingTitle').textContent = `❌ ${data.error}`;
+                document.getElementById('processingStatus').textContent = 'Error';
+                return;
+            }
+
+            currentJobId = data.job_id;
+            document.getElementById('processingTitle').textContent = `⏳ Processing ${file.name}…`;
+            document.getElementById('processingStatus').textContent = 'Queued';
+
+            // Start polling
+            if (pollInterval) clearInterval(pollInterval);
+            pollInterval = setInterval(pollJob, 1000);
+        } catch(e) {
+            document.getElementById('processingTitle').textContent = `❌ Upload failed: ${e.message}`;
+        }
+    }
+
+    async function pollJob() {
+        if (!currentJobId) return;
+        try {
+            const r = await fetch(`/api/jobs/${currentJobId}`);
+            const data = await r.json();
+
+            const pct = data.total_frames > 0
+                ? Math.round((data.progress / data.total_frames) * 100)
+                : 0;
+
+            document.getElementById('progressFill').style.width = `${pct}%`;
+            document.getElementById('processingStatus').textContent =
+                `${data.status} • ${data.progress}/${data.total_frames || '?'} frames`;
+
+            if (data.status === 'processing') {
+                document.getElementById('processingTitle').textContent =
+                    `⚙️ Analyzing ${data.filename}…`;
+            }
+
+            if (data.status === 'done') {
+                clearInterval(pollInterval);
+                document.getElementById('progressFill').style.width = '100%';
+                document.getElementById('processingTitle').textContent =
+                    `✅ Analysis Complete`;
+                document.getElementById('processingStatus').textContent =
+                    `${data.processing_time_seconds}s`;
+                showResults(data);
+            }
+
+            if (data.status === 'error') {
+                clearInterval(pollInterval);
+                document.getElementById('processingTitle').textContent =
+                    `❌ ${data.error}`;
+                document.getElementById('processingStatus').textContent = 'Error';
+            }
+        } catch(e) {}
+    }
+
+    function showResults(data) {
+        const agg = data.aggregate;
+        const grid = document.getElementById('metricsGrid');
+        grid.innerHTML = `
+            <div class="metric-card">
+                <div class="metric-label">Classroom State</div>
+                <div class="state-badge">${agg.dominant_state}</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Engagement</div>
+                <div class="metric-value green">${(agg.avg_engagement * 100).toFixed(1)}%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Participation</div>
+                <div class="metric-value blue">${(agg.avg_participation * 100).toFixed(1)}%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Disruption</div>
+                <div class="metric-value red">${(agg.avg_disruption * 100).toFixed(1)}%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Teacher Interaction</div>
+                <div class="metric-value yellow">${(agg.avg_teacher_interaction * 100).toFixed(1)}%</div>
+            </div>
+        `;
+
+        // State distribution
+        const dist = agg.state_distribution;
+        if (dist && Object.keys(dist).length > 0) {
+            const container = document.getElementById('stateDistribution');
+            container.style.display = 'block';
+            const bars = document.getElementById('stateBars');
+            bars.innerHTML = '';
+            const sorted = Object.entries(dist).sort((a,b) => b[1] - a[1]);
+            for (const [state, frac] of sorted) {
+                bars.innerHTML += `
+                    <div class="state-bar">
+                        <span class="name">${state}</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width:${(frac*100).toFixed(1)}%"></div></div>
+                        <span class="pct">${(frac*100).toFixed(1)}%</span>
+                    </div>
+                `;
+            }
+        }
+
+        // Download buttons
+        if (data.has_video) {
+            const vBtn = document.getElementById('downloadVideoBtn');
+            vBtn.href = `/api/jobs/${currentJobId}/video`;
+            vBtn.style.display = 'inline-flex';
+        }
+        const jBtn = document.getElementById('downloadJsonBtn');
+        jBtn.href = `/api/jobs/${currentJobId}/results`;
+        jBtn.style.display = 'inline-flex';
+
+        document.getElementById('resultsSection').classList.add('show');
+    }
+
+    // ================================================================
+    // Live Camera
+    // ================================================================
+    function startCamera() {
+        if (cameraWs) return;
+
+        const protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+        cameraWs = new WebSocket(`${protocol}://${location.host}/ws/camera`);
+
+        document.getElementById('startCameraBtn').style.display = 'none';
+        document.getElementById('stopCameraBtn').style.display = 'inline-flex';
+        document.getElementById('cameraPlaceholder').style.display = 'none';
+        document.getElementById('cameraImg').style.display = 'block';
+        document.getElementById('liveBadge').classList.add('show');
+        document.getElementById('inferenceBadge').classList.add('show');
+
+        cameraWs.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+
+            if (data.error) {
+                alert('Camera error: ' + data.error);
+                stopCamera();
+                return;
+            }
+
+            if (data.type === 'frame') {
+                // Update frame
+                document.getElementById('cameraImg').src =
+                    'data:image/jpeg;base64,' + data.frame;
+
+                // Update metrics
+                const eng = (data.metrics.engagement_score * 100).toFixed(1);
+                const part = (data.metrics.participation_rate * 100).toFixed(1);
+                const disr = (data.metrics.disruption_index * 100).toFixed(1);
+                const teach = (data.metrics.teacher_interaction_ratio * 100).toFixed(1);
+
+                document.getElementById('liveEngagement').textContent = `${eng}%`;
+                document.getElementById('liveParticipation').textContent = `${part}%`;
+                document.getElementById('liveDisruption').textContent = `${disr}%`;
+                document.getElementById('liveTeacher').textContent = `${teach}%`;
+
+                document.getElementById('engGauge').style.width = `${eng}%`;
+                document.getElementById('partGauge').style.width = `${part}%`;
+                document.getElementById('disrGauge').style.width = `${disr}%`;
+                document.getElementById('teachGauge').style.width = `${teach}%`;
+
+                document.getElementById('liveState').textContent =
+                    data.classroom_state.replace(/_/g, ' ').toUpperCase();
+                document.getElementById('liveStateConf').textContent =
+                    `Confidence: ${(data.state_confidence * 100).toFixed(0)}%`;
+
+                document.getElementById('liveTracked').textContent = data.tracked_entities;
+                const events = data.active_events;
+                document.getElementById('liveEvents').textContent =
+                    events.length > 0 ? events.join(', ') : 'No events';
+
+                document.getElementById('inferenceBadge').textContent =
+                    `${data.inference_ms}ms`;
+            }
+        };
+
+        cameraWs.onclose = () => {
+            stopCamera();
+        };
+
+        cameraWs.onerror = (e) => {
+            console.error('WebSocket error:', e);
+            stopCamera();
+        };
+    }
+
+    function stopCamera() {
+        if (cameraWs) {
+            try { cameraWs.send('stop'); } catch(e) {}
+            try { cameraWs.close(); } catch(e) {}
+            cameraWs = null;
+        }
+
+        document.getElementById('startCameraBtn').style.display = 'inline-flex';
+        document.getElementById('stopCameraBtn').style.display = 'none';
+        document.getElementById('liveBadge').classList.remove('show');
+        document.getElementById('inferenceBadge').classList.remove('show');
+    }
+    </script>
+</body>
+</html>
