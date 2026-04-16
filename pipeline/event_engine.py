@@ -63,8 +63,7 @@ class EventEngine:
         self.fps = fps
         self.rules = rules or config.EVENT_RULES
 
-        # Track active events per entity to detect start/end
-        self._active_events = defaultdict(dict)  # entity_id -> {event_type: info}
+        self._active_events = defaultdict(dict)
 
     def extract_events(self, smoothed_entities, timestamp=0.0,
                        teacher_present=False, teacher_engaging=False):
@@ -114,11 +113,9 @@ class EventEngine:
         """
         required = rule["required_activity"]
 
-        # Normalize to list
         if isinstance(required, str):
             required = [required]
 
-        # Check if any required activity is confirmed
         matching_activity = None
         matching_confidence = 0.0
         for act in required:
@@ -128,19 +125,16 @@ class EventEngine:
                 break
 
         if matching_activity is None:
-            # Activity not confirmed — clear any active event of this type
             if entity_id in self._active_events:
                 self._active_events[entity_id].pop(event_type, None)
             return None
 
-        # Check conditions
         condition = rule.get("condition")
         if condition == "no_teacher_engagement" and teacher_engaging:
             return None
         if condition == "teacher_present" and not teacher_present:
             return None
 
-        # Check duration threshold
         min_duration_sec = rule.get("min_duration_sec", 0)
         min_frames = int(min_duration_sec * self.fps)
         streak = activity_streaks.get(matching_activity, 0)
@@ -148,7 +142,6 @@ class EventEngine:
         if streak < min_frames:
             return None
 
-        # Rule fires!
         return Event(
             event_type=event_type,
             entity_id=entity_id,

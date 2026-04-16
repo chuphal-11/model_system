@@ -22,7 +22,7 @@ class Detection:
                  "source_model")
 
     def __init__(self, bbox, class_name, class_id, confidence, source_model):
-        self.bbox = bbox            # [x1, y1, x2, y2]
+        self.bbox = bbox
         self.class_name = class_name
         self.class_id = class_id
         self.confidence = confidence
@@ -54,7 +54,7 @@ class MultiModelDetector:
             device: 'cpu' or 'cuda:0'
         """
         self.device = device
-        self.models = {}          # name -> callable model
+        self.models = {}
         self.person_detector = None
         self._loaded = False
 
@@ -64,7 +64,6 @@ class MultiModelDetector:
         logger.info("Loading YOLO models …")
         logger.info("=" * 60)
 
-        # Load custom YOLOv5 models
         for model_name, meta in config.MODEL_REGISTRY.items():
             model_path = os.path.join(config.MODEL_DIR, model_name)
             if not os.path.exists(model_path):
@@ -83,7 +82,6 @@ class MultiModelDetector:
                     "meta": meta,
                 }
 
-        # Load person detector (YOLOv8n)
         person_path = os.path.join(config.MODEL_DIR, config.PERSON_DETECTOR)
         if os.path.exists(person_path):
             self.person_detector = load_person_detector(
@@ -119,7 +117,6 @@ class MultiModelDetector:
         activity_detections = []
         t0 = time.time()
 
-        # --- Person detection ---
         if self.person_detector is not None:
             try:
                 raw = self.person_detector(frame)
@@ -136,7 +133,6 @@ class MultiModelDetector:
             except Exception as e:
                 logger.debug(f"Person detector error: {e}")
 
-        # --- Activity detection (custom models) ---
         for model_name, entry in self.models.items():
             try:
                 raw = entry["model"](frame)

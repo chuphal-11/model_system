@@ -19,13 +19,6 @@ import numpy as np
 logger = logging.getLogger(__name__)
 
 
-# ==========================================================================
-# YOLOv7 Custom Layers
-# ==========================================================================
-# These classes replicate the custom layers used in YOLOv7 training so that
-# torch.load can deserialize the checkpoints.
-# ==========================================================================
-
 def autopad(k, p=None):
     """Compute auto-padding for Conv layers."""
     if p is None:
@@ -323,10 +316,6 @@ class Expand(nn.Module):
         return x.view(N, C // s // s, H * s, W * s)
 
 
-# ==========================================================================
-# Module patching
-# ==========================================================================
-
 _CUSTOM_CLASSES = {
     "MP": MP, "SP": SP, "Conv": Conv, "SPPCSPC": SPPCSPC,
     "RepConv": RepConv, "ImplicitA": ImplicitA, "ImplicitM": ImplicitM,
@@ -341,13 +330,11 @@ def _patch_modules():
     Inject all custom YOLOv7 classes into the module namespaces that
     torch.load expects (models.common, models.yolo).
     """
-    # Try to import existing yolov5 modules first
     try:
         import yolov5
     except ImportError:
         pass
 
-    # Create/patch the 'models' namespace
     if "models" not in sys.modules:
         models_mod = types.ModuleType("models")
         models_mod.__path__ = []
@@ -355,28 +342,24 @@ def _patch_modules():
     else:
         models_mod = sys.modules["models"]
 
-    # Create/patch models.common
     if "models.common" not in sys.modules:
         common_mod = types.ModuleType("models.common")
         sys.modules["models.common"] = common_mod
     else:
         common_mod = sys.modules["models.common"]
 
-    # Create/patch models.yolo
     if "models.yolo" not in sys.modules:
         yolo_mod = types.ModuleType("models.yolo")
         sys.modules["models.yolo"] = yolo_mod
     else:
         yolo_mod = sys.modules["models.yolo"]
 
-    # Create/patch models.experimental
     if "models.experimental" not in sys.modules:
         exp_mod = types.ModuleType("models.experimental")
         sys.modules["models.experimental"] = exp_mod
     else:
         exp_mod = sys.modules["models.experimental"]
 
-    # First, copy all attributes from the real yolov5 modules (if available)
     try:
         from yolov5.models import common as real_common
         for attr in dir(real_common):
@@ -410,25 +393,20 @@ def _patch_modules():
     except ImportError:
         pass
 
-    # Now inject our custom YOLOv7 classes, but ONLY if they don't already
-    # exist from the real yolov5 package (to avoid breaking Model/DetectionModel).
     for name, cls in _CUSTOM_CLASSES.items():
         for mod in (common_mod, yolo_mod, exp_mod):
             if not hasattr(mod, name):
                 setattr(mod, name, cls)
 
-    # Also add autopad if missing
     if not hasattr(common_mod, "autopad"):
         common_mod.autopad = autopad
     if not hasattr(yolo_mod, "autopad"):
         yolo_mod.autopad = autopad
 
-    # Make sure models module references its submodules
     models_mod.common = common_mod
     models_mod.yolo = yolo_mod
     models_mod.experimental = exp_mod
 
-    # Patch utils modules that checkpoints may reference
     _patch_utils_modules()
 
     logger.debug("Patched models.common, models.yolo, models.experimental "
@@ -437,7 +415,6 @@ def _patch_modules():
 
 def _patch_utils_modules():
     """Patch utils.* modules that torch.load may need to resolve."""
-    # Try importing from yolov5 package
     try:
         from yolov5 import utils as yolov5_utils
         submodules = ["general", "torch_utils", "autoanchor", "plots",
@@ -462,10 +439,6 @@ def _patch_utils_modules():
         pass
 
 
-# ==========================================================================
-# Model Wrapper
-# ==========================================================================
-
 class YOLOv7ModelWrapper:
     """
     Wrapper around a loaded YOLOv7 checkpoint that provides a simple
@@ -482,7 +455,6 @@ class YOLOv7ModelWrapper:
         self.model.to(device)
         self.model.eval()
 
-        # Get stride
         self.stride = int(self.model.stride.max()) if hasattr(self.model, "stride") else 32
 
     def __call__(self, frame):
@@ -492,21 +464,18 @@ class YOLOv7ModelWrapper:
         Returns:
             list of dicts with bbox, class_name, class_id, confidence
         """
-        # Preprocess
         img = letterbox(frame, self.img_size, stride=self.stride)[0]
-        img = img.transpose((2, 0, 1))[::-1]  # BGR to RGB, HWC to CHW
+        img = img.transpose((2, 0, 1))[::-1]
         img = np.ascontiguousarray(img)
         img = torch.from_numpy(img).to(self.device).float() / 255.0
         if img.ndimension() == 3:
             img = img.unsqueeze(0)
 
-        # Inference
         with torch.no_grad():
             pred = self.model(img)
             if isinstance(pred, (list, tuple)):
                 pred = pred[0]
 
-        # NMS
         pred = non_max_suppression(pred, self.conf_threshold, 0.45)
 
         detections = []
@@ -528,10 +497,6 @@ class YOLOv7ModelWrapper:
                     })
         return detections
 
-
-# ==========================================================================
-# Helper Functions
-# ==========================================================================
 
 def letterbox(im, new_shape=640, color=(114, 114, 114), auto=False,
               scaleFill=False, scaleup=True, stride=32):
@@ -634,10 +599,6 @@ def scale_boxes(img1_shape, boxes, img0_shape, ratio_pad=None):
     return boxes
 
 
-# ==========================================================================
-# Public API
-# ==========================================================================
-
 def load_custom_model(model_path, class_names, device="cpu",
                       conf_threshold=0.25):
     """
@@ -660,36 +621,23 @@ def load_custom_model(model_path, class_names, device="cpu",
 
         if isinstance(ckpt, dict) and "model" in ckpt:
             model = ckpt["model"].float()
-            # Switch to eval/inference mode
             if hasattr(model, "fuse"):
                 try:
                     model = model.fuse()
                 except Exception:
-                    pass  # Fuse may fail for some architectures; not critical
+                    pass
         else:
             model = ckpt
 
-        # Ensure model is in eval mode
         model.eval()
 
-        # Reset cached grid tensors in IDetect / Detect heads so they
-        # are recomputed to match the actual inference image dimensions.
-        # The yolov5 Detect.forward calls _make_grid which assigns into
-        # self.grid[i] and self.anchor_grid[i] as list elements. But the
-        # checkpoint may have saved anchor_grid as a registered buffer
-        # (tensor), causing shape mismatch on assignment. Convert both
-        # to lists and enable dynamic mode so grids regenerate properly.
         for m in model.modules():
             cls_name = type(m).__name__
             if cls_name in ("IDetect", "Detect") and hasattr(m, "grid"):
                 m.grid = [torch.zeros(1)] * m.nl
-                # anchor_grid is often a registered buffer (tensor), but
-                # yolov5's _make_grid tries to assign list elements to it.
-                # Delete the buffer registration and replace with a list.
                 if 'anchor_grid' in dict(m.named_buffers()):
                     del m._buffers['anchor_grid']
                 m.anchor_grid = [torch.zeros(1)] * m.nl
-                # Enable dynamic mode so grid is always recalculated
                 if hasattr(m, 'dynamic'):
                     m.dynamic = True
 
@@ -727,7 +675,7 @@ def load_person_detector(model_path, device="cpu", conf_threshold=0.30):
             for r in results:
                 for box in r.boxes:
                     cls_id = int(box.cls[0])
-                    if cls_id == 0:  # person class
+                    if cls_id == 0:
                         xyxy = box.xyxy[0].cpu().numpy()
                         detections.append({
                             "bbox": [int(xyxy[0]), int(xyxy[1]),

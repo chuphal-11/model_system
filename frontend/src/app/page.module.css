@@ -4,7 +4,6 @@
   padding: 40px 32px;
 }
 
-/* ── Header ─────────────────────────────────────────────── */
 .header {
   display: flex;
   justify-content: space-between;
@@ -56,7 +55,6 @@
   color: var(--text-inverse);
 }
 
-/* ── Stats Grid ─────────────────────────────────────────── */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -128,7 +126,6 @@
   height: 3px;
 }
 
-/* ── Section Title ──────────────────────────────────────── */
 .sectionTitle {
   font-size: 14px;
   font-weight: 700;
@@ -138,7 +135,6 @@
   color: var(--text-muted);
 }
 
-/* ── Feature Grid ───────────────────────────────────────── */
 .featureGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

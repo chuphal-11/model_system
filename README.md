@@ -1,12 +1,12 @@
 <div align="center">
-  <h1>🧠 Neural Nexus</h1>
+  <h1>Neural Nexus</h1>
   <p><b>AI-Powered Classroom Intelligence System</b></p>
   <p><i>Real-time Behavioral Analysis, Engagement Tracking, and Live Camera Streaming Powered by 9 GPU-Accelerated YOLO Models & DeepSORT</i></p>
 </div>
 
 ---
 
-## 📖 Overview
+## Overview
 
 **Neural Nexus** is a production-grade inference system designed to monitor and analyze physical classroom environments. By utilizing a robust sequential computer vision pipeline, it transforms raw classroom video or live webcam feeds into structured, actionable intelligence including student engagement scores, disruptive event tracking, and overall classroom state assessment.
 
@@ -14,7 +14,7 @@ Built on **FastAPI (Backend)** and **Next.js (Frontend UI)**, Neural Nexus deliv
 
 ---
 
-## 🚀 System Architecture
+## System Architecture
 
 The overarching system leverages a decoupled architecture. The frontend handles interactive file drops, status polling, and live video renders, while the FastAPI backend handles REST routing, WebSocket streaming, and asynchronous AI model processing.
 
@@ -55,7 +55,7 @@ graph TD
 
 ---
 
-## 🔧 The AI Vision Pipeline
+## The AI Vision Pipeline
 
 The core component of Neural Nexus is the modular AI pipeline, meticulously developed to resolve flickering detections and unstable tracking. The pipeline runs sequentially across every processed frame.
 
@@ -150,7 +150,7 @@ flowchart TD
 
 ---
 
-## 🌐 Telemetry Protocol (WebSocket) 
+## Telemetry Protocol (WebSocket) 
 
 For live camera mode, ensuring latency remains under 400ms is paramount. Neural Nexus pushes a serialized pipeline state back to the browser.
 The Frontend natively overlays metrics utilizing `CSS Grid` and React Hooks, ensuring no visible tearing.
@@ -174,7 +174,7 @@ The Frontend natively overlays metrics utilizing `CSS Grid` and React Hooks, ens
 
 ---
 
-## 🛠️ Environment Configuration & Deployment
+## Environment Configuration & Deployment
 
 ### Hardware Requirements
 - **OS**: Windows / Linux
@@ -187,22 +187,14 @@ Neural Nexus separates the AI backend (FastAPI) and UI frontend (Next.js).
 
 **1. Start the API Server & Pipeline**
 ```bash
-# From project root
 cd backend
 pip install -r ../requirements.txt 
-
-# Initiates parallel model loading & WSGI server
 python server.py
-# Server binds to: http://localhost:8000
 ```
 
 **2. Start the Frontend Application**
 ```bash
-# In a new terminal context, from project root
 cd frontend
 npm install
-
-# Starts the Turbopack UI server mapping aliases to the backend
 npm run dev
-# Dashboard binds to: http://localhost:3000
 ```

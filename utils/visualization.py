@@ -15,9 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 class Visualizer:
-    """
-    Annotates frames with detection boxes, track IDs, and metrics overlay.
-    """
+    """Annotates frames with detection boxes, track IDs, and metrics overlay."""
 
     def __init__(self):
         self.font = cv2.FONT_HERSHEY_SIMPLEX
@@ -45,17 +43,14 @@ class Visualizer:
         """
         vis = frame.copy()
 
-        # Draw raw detection boxes to match user reference image
         if raw_detections:
             for det in raw_detections:
                 self._draw_raw_detection(vis, det)
         else:
-            # Fallback to drawing entities if no raw detections
             entities = smoothed_entities or tracked_entities or []
             for entity in entities:
                 self._draw_entity(vis, entity)
 
-        # Draw metrics overlay
         if metrics or behavior_result:
             self._draw_overlay(vis, metrics, behavior_result, events)
 
@@ -67,15 +62,11 @@ class Visualizer:
         x1, y1, x2, y2 = [int(c) for c in bbox]
         class_name = getattr(det, "class_name", "unknown")
 
-        # Color based on class
         color = config.VIS_BBOX_COLORS.get(class_name, (0, 255, 255))
 
-        # Thicker bounding box (3px)
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 3)
 
-        # Draw bold label directly above box
         label_y = max(y1 - 10, 25)
-        # Using larger scale and thicker font
         cv2.putText(frame, class_name, (x1, label_y),
                     self.font, 1.0, color, 2, self.line_type)
 
@@ -87,24 +78,20 @@ class Visualizer:
         confirmed = entity.get("confirmed_activities", {})
         raw = entity.get("raw_activities", entity.get("activities", {}))
 
-        # Determine color based on the primary activity
         if confirmed:
             primary_activity = max(confirmed, key=confirmed.get)
             color = config.VIS_BBOX_COLORS.get(primary_activity, (200, 200, 200))
         else:
-            color = (128, 128, 128)  # Gray for no confirmed activity
+            color = (128, 128, 128)
 
-        # Draw bounding box
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
 
-        # Draw ID label
         id_label = f"ID:{eid}"
         label_y = max(y1 - 8, 15)
         cv2.putText(frame, id_label, (x1, label_y),
                     self.font, self.font_scale, color,
                     self.thickness, self.line_type)
 
-        # Draw confirmed activities
         if confirmed:
             for i, (act, conf) in enumerate(confirmed.items()):
                 act_label = f"{act} ({conf:.2f})"
@@ -118,7 +105,6 @@ class Visualizer:
         """Draw a semi-transparent overlay with metrics and state info."""
         h, w = frame.shape[:2]
 
-        # Background panel
         overlay = frame.copy()
         panel_w = 320
         panel_h = 200
@@ -127,7 +113,6 @@ class Visualizer:
                       (0, 0, 0), -1)
         cv2.addWeighted(overlay, 0.7, frame, 0.3, 0, frame)
 
-        # Draw text lines
         x_start = w - panel_w
         y_start = 30
         line_height = 22
@@ -157,7 +142,7 @@ class Visualizer:
             )
 
         if metrics:
-            lines.append(("", (0, 0, 0)))  # spacer
+            lines.append(("", (0, 0, 0)))
             lines.append(
                 (f"Engagement:    {metrics.get('engagement_score', 0):.1%}",
                  (0, 255, 0))

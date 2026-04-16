@@ -34,7 +34,6 @@
 }
 .stopBtn:hover { opacity: 0.9; }
 
-/* Layout */
 .layout {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -47,7 +46,6 @@
   .header { flex-direction: column; gap: 16px; }
 }
 
-/* Feed */
 .feedContainer { position: relative; }
 .feed {
   background: #111;
@@ -91,7 +89,6 @@
   border-radius: var(--radius);
 }
 
-/* Sidebar */
 .sidebar { display: flex; flex-direction: column; gap: 12px; }
 
 .sideCard {

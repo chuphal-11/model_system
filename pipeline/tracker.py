@@ -13,10 +13,6 @@ from deep_sort_realtime.deepsort_tracker import DeepSort
 logger = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------------
-# IoU computation for activity mapping
-# ---------------------------------------------------------------------------
-
 def iou_batch(bb_test, bb_gt):
     """
     Compute IoU between two sets of bounding boxes.
@@ -52,10 +48,6 @@ def iou_batch(bb_test, bb_gt):
     return intersection / np.maximum(union, 1e-6)
 
 
-# ---------------------------------------------------------------------------
-# Tracker Wrapper
-# ---------------------------------------------------------------------------
-
 class SORTTracker:
     """
     DeepSORT wrapper. Refactored from basic SORT.
@@ -73,8 +65,6 @@ class SORTTracker:
         self.min_hits = min_hits
         self.iou_threshold = iou_threshold
         
-        # Instantiate DeepSort object
-        # Using default mobilenet embedding extractor.
         self.tracker = DeepSort(
             max_age=max_age,
             n_init=min_hits,
@@ -103,8 +93,6 @@ class SORTTracker:
                     "time_since_update": int
                 }
         """
-        # Convert person detections to deep_sort_realtime format:
-        # [ [left, top, w, h] , confidence, detection_class ]
         ds_detections = []
         if person_detections:
             for d in person_detections:
@@ -115,7 +103,6 @@ class SORTTracker:
                     ([x1, y1, w, h], d.confidence, d.class_name)
                 )
 
-        # Update deepsort with detections and raw frame (for appearance embed extraction)
         tracks = self.tracker.update_tracks(ds_detections, frame=frame)
 
         entities = []
@@ -123,10 +110,8 @@ class SORTTracker:
             if not track.is_confirmed():
                 continue
 
-            # Get bounding box (ltwh -> xyxy)
             ltrb = track.to_ltrb() 
             
-            # Prevent invalid negative bbox due to filter overshoot
             bbox = [max(0, float(c)) for c in ltrb]
 
             entity = {
@@ -138,7 +123,6 @@ class SORTTracker:
             }
             entities.append(entity)
 
-        # Map activity detections to tracked entities via IoU overlap
         if activity_detections and entities:
             self._map_activities(entities, activity_detections)
 
@@ -168,12 +152,11 @@ class SORTTracker:
             best_entity_idx = np.argmax(iou_matrix[act_idx])
             best_iou = iou_matrix[act_idx, best_entity_idx]
 
-            if best_iou > 0.1:  # Minimum overlap threshold
+            if best_iou > 0.1:
                 entity = entities[best_entity_idx]
                 cls_name = getattr(det, "class_name", "unknown")
                 conf = getattr(det, "confidence", 0.0)
                 
-                # Keep highest confidence for each activity
                 if (cls_name not in entity["activities"]
                         or conf > entity["activities"][cls_name]):
                     entity["activities"][cls_name] = conf

@@ -29,7 +29,6 @@ export default function UploadPage() {
       setJob({ status: "queued", filename: data.filename, progress: 0, total_frames: 0 });
       setUploading(false);
 
-      // Poll for status
       pollRef.current = setInterval(async () => {
         try {
           const sr = await fetch(`/api/jobs/${data.job_id}`);
@@ -62,7 +61,6 @@ export default function UploadPage() {
           </p>
         </div>
 
-        {/* Upload Zone */}
         {!job && (
           <div
             className={`${styles.uploadZone} ${dragover ? styles.dragover : ""}`}
@@ -92,11 +90,10 @@ export default function UploadPage() {
           </div>
         )}
 
-        {/* Processing Progress */}
         {job && job.status !== "done" && job.status !== "error" && (
           <div className={styles.processingCard}>
             <div className={styles.processHeader}>
-              <h3>⚙️ PROCESSING {job.filename?.toUpperCase()}</h3>
+              <h3>PROCESSING {job.filename?.toUpperCase()}</h3>
               <span className={styles.processPercent}>{pct}%</span>
             </div>
             <div className={styles.progressBar}>
@@ -108,10 +105,9 @@ export default function UploadPage() {
           </div>
         )}
 
-        {/* Error State */}
         {job?.status === "error" && (
           <div className={styles.errorCard}>
-            <h3>❌ PROCESSING FAILED</h3>
+            <h3>PROCESSING FAILED</h3>
             <p>{job.error}</p>
             <button className={styles.retryBtn} onClick={() => { setJob(null); setJobId(null); }}>
               TRY AGAIN
@@ -119,7 +115,6 @@ export default function UploadPage() {
           </div>
         )}
 
-        {/* Results */}
         {job?.status === "done" && agg && (
           <div className={styles.results}>
             <div className={styles.resultsHeader}>
@@ -129,7 +124,6 @@ export default function UploadPage() {
               </span>
             </div>
 
-            {/* Metric Cards */}
             <div className={styles.metricsGrid}>
               <div className={styles.metricCard}>
                 <span className={styles.metricLabel}>CLASSROOM STATE</span>
@@ -175,7 +169,6 @@ export default function UploadPage() {
               </div>
             </div>
 
-            {/* State Distribution */}
             {agg.state_distribution && (
               <div className={styles.distCard}>
                 <h3 className={styles.distTitle}>STATE DISTRIBUTION</h3>
@@ -193,7 +186,6 @@ export default function UploadPage() {
               </div>
             )}
 
-            {/* Actions */}
             <div className={styles.actions}>
               {job.has_video && (
                 <a href={`/api/jobs/${jobId}/video`} className={styles.downloadBtn} target="_blank">

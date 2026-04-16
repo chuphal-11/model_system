@@ -38,8 +38,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.requests import Request
 
-# ── Project imports ──────────────────────────────────────────────────────
-# Backend lives in model_system/backend/ — add parent (model_system/) to path
 BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BACKEND_DIR)
 sys.path.insert(0, PROJECT_ROOT)
@@ -54,7 +52,6 @@ from pipeline.behavior_engine import BehaviorEngine
 from pipeline.metrics import MetricsComputer
 from utils.visualization import Visualizer
 
-# ── Logging ──────────────────────────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s │ %(levelname)-7s │ %(name)-20s │ %(message)s",
@@ -63,17 +60,12 @@ logging.basicConfig(
 logging.getLogger("ultralytics").setLevel(logging.WARNING)
 logger = logging.getLogger("neural_nexus.server")
 
-# ── Directories ──────────────────────────────────────────────────────────
 UPLOAD_DIR = os.path.join(BACKEND_DIR, "uploads")
 RESULTS_DIR = os.path.join(BACKEND_DIR, "output", "jobs")
 TEMPLATES_DIR = os.path.join(BACKEND_DIR, "templates")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
-
-# =========================================================================
-# Pipeline Manager — Singleton holding loaded models
-# =========================================================================
 
 class PipelineManager:
     """
@@ -146,10 +138,6 @@ class PipelineManager:
 pipeline = PipelineManager()
 
 
-# =========================================================================
-# Job Manager — Track video processing jobs
-# =========================================================================
-
 class JobStatus(str, Enum):
     QUEUED = "queued"
     PROCESSING = "processing"
@@ -191,7 +179,6 @@ def process_video_job(job: Job):
         job_dir = os.path.join(RESULTS_DIR, job.id)
         os.makedirs(job_dir, exist_ok=True)
 
-        # Per-session components
         tracker = pipeline.create_tracker()
         smoother = pipeline.create_smoother()
         behavior_engine = pipeline.create_behavior_engine()
@@ -206,7 +193,6 @@ def process_video_job(job: Job):
             event_engine = pipeline.create_event_engine(fps=fps)
             metrics_computer = pipeline.create_metrics_computer(fps=fps)
 
-            # Video writer for annotated output
             vis_path = os.path.join(job_dir, "annotated.mp4")
             video_writer = None
             if extractor.width > 0:
@@ -224,7 +210,6 @@ def process_video_job(job: Job):
                 frame_count += 1
                 job.progress = frame_count
 
-                # Stage 1–3
                 det_result = pipeline.detector.detect(frame)
                 total_inference_ms += det_result["inference_time_ms"]
                 tracked = tracker.update(
@@ -234,7 +219,6 @@ def process_video_job(job: Job):
                 )
                 smoothed = smoother.update(tracked)
 
-                # Stage 4: Teacher state
                 teacher_present = any(
                     "teacher" in e.get("confirmed_activities", {})
                     for e in smoothed
@@ -245,7 +229,6 @@ def process_video_job(job: Job):
                     for e in smoothed
                 )
 
-                # Stage 5–7
                 events = event_engine.extract_events(
                     smoothed, timestamp=timestamp,
                     teacher_present=teacher_present,
@@ -255,7 +238,6 @@ def process_video_job(job: Job):
                 behavior = behavior_engine.infer(smoothed, events, event_summary)
                 metrics = metrics_computer.update(smoothed, behavior)
 
-                # Timeline snapshot
                 if frame_count % metrics_interval == 0:
                     timeline.append({
                         "timestamp": format_timestamp(timestamp),
@@ -273,7 +255,6 @@ def process_video_job(job: Job):
                         "teacher_signals": behavior["teacher_signals"],
                     })
 
-                # Annotated video
                 if video_writer:
                     vis_frame = visualizer.annotate_frame(
                         frame,
@@ -322,10 +303,6 @@ def process_video_job(job: Job):
         job.error = str(e)
 
 
-# =========================================================================
-# FastAPI Application
-# =========================================================================
-
 app = FastAPI(
     title="Neural Nexus — AI Classroom Intelligence",
     version="1.0.0",
@@ -340,28 +317,21 @@ async def startup():
     pipeline.load_models()
 
 
-# ── Frontend ─────────────────────────────────────────────────────────────
-
 @app.get("/", response_class=HTMLResponse)
 async def serve_frontend(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-
-# ── System Status ────────────────────────────────────────────────────────
 
 @app.get("/api/status")
 async def system_status():
     return pipeline.get_system_info()
 
 
-# ── Video Upload & Processing ────────────────────────────────────────────
-
 @app.post("/api/upload")
 async def upload_video(file: UploadFile = File(...)):
     if not pipeline.is_ready:
         return JSONResponse({"error": "Models not loaded yet"}, status_code=503)
 
-    # Validate file type
     allowed = (".mp4", ".avi", ".mov", ".mkv", ".webm")
     ext = os.path.splitext(file.filename)[1].lower()
     if ext not in allowed:
@@ -370,7 +340,6 @@ async def upload_video(file: UploadFile = File(...)):
             status_code=400,
         )
 
-    # Save uploaded file
     job_id = str(uuid.uuid4())[:8]
     input_path = os.path.join(UPLOAD_DIR, f"{job_id}{ext}")
 
@@ -378,11 +347,9 @@ async def upload_video(file: UploadFile = File(...)):
         content = await file.read()
         f.write(content)
 
-    # Create job
     job = Job(job_id=job_id, filename=file.filename, input_path=input_path)
     jobs[job_id] = job
 
-    # Start processing in background thread
     thread = threading.Thread(target=process_video_job, args=(job,), daemon=True)
     thread.start()
 
@@ -438,8 +405,6 @@ async def get_job_video(job_id: str):
     )
 
 
-# ── Live Camera WebSocket ────────────────────────────────────────────────
-
 @app.websocket("/ws/camera")
 async def camera_stream(websocket: WebSocket):
     await websocket.accept()
@@ -450,7 +415,6 @@ async def camera_stream(websocket: WebSocket):
         await websocket.close()
         return
 
-    # Per-session pipeline components
     tracker = pipeline.create_tracker()
     smoother = pipeline.create_smoother()
     behavior_engine = pipeline.create_behavior_engine()
@@ -463,7 +427,7 @@ async def camera_stream(websocket: WebSocket):
         return
 
     fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
-    event_engine = pipeline.create_event_engine(fps=1.0)  # ~1 FPS processing
+    event_engine = pipeline.create_event_engine(fps=1.0)
     metrics_computer = pipeline.create_metrics_computer(fps=1.0)
 
     frame_count = 0
@@ -478,7 +442,6 @@ async def camera_stream(websocket: WebSocket):
 
             frame_count += 1
 
-            # Only process every Nth frame for ~1 FPS
             sample_rate = max(1, int(fps))
             if frame_count % sample_rate != 0:
                 continue
@@ -486,7 +449,6 @@ async def camera_stream(websocket: WebSocket):
             timestamp = frame_count / fps
             t0 = time.time()
 
-            # ── Full pipeline ────────────────────────────────
             det_result = pipeline.detector.detect(frame)
             tracked = tracker.update(
                 det_result["person_detections"],
@@ -516,7 +478,6 @@ async def camera_stream(websocket: WebSocket):
 
             inference_ms = (time.time() - t0) * 1000
 
-            # ── Annotate frame ───────────────────────────────
             vis_frame = visualizer.annotate_frame(
                 frame,
                 smoothed_entities=smoothed,
@@ -526,7 +487,6 @@ async def camera_stream(websocket: WebSocket):
                 raw_detections=det_result["activity_detections"],
             )
 
-            # ── Encode as JPEG and send ──────────────────────
             _, buffer = cv2.imencode(".jpg", vis_frame, [cv2.IMWRITE_JPEG_QUALITY, 70])
             frame_b64 = base64.b64encode(buffer).decode("utf-8")
 
@@ -551,7 +511,6 @@ async def camera_stream(websocket: WebSocket):
 
             await websocket.send_json(message)
 
-            # Check for stop command (non-blocking)
             try:
                 data = await asyncio.wait_for(
                     websocket.receive_text(), timeout=0.01
@@ -573,10 +532,6 @@ async def camera_stream(websocket: WebSocket):
         cap.release()
         logger.info("WebSocket: Camera released")
 
-
-# =========================================================================
-# Entry Point
-# =========================================================================
 
 if __name__ == "__main__":
     import uvicorn

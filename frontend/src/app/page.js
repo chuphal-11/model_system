@@ -23,7 +23,6 @@ export default function Dashboard() {
     <>
       <Navbar />
       <main className={styles.main}>
-        {/* Header */}
         <div className={styles.header}>
           <div>
             <span className={styles.tag}>System Monitor</span>
@@ -37,7 +36,6 @@ export default function Dashboard() {
           </button>
         </div>
 
-        {/* Status Cards */}
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
             <div className={`${styles.statIcon} ${styles.iconGreen}`}>
@@ -95,7 +93,6 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Feature Cards */}
         <h2 className={styles.sectionTitle}>CAPABILITIES</h2>
         <div className={styles.featureGrid}>
           <div className={styles.featureCard}>

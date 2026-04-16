@@ -20,11 +20,9 @@ import os
 import sys
 import time
 
-# Save reference to original cv2.imshow BEFORE ultralytics patches it
 import cv2 as _cv2
 _original_imshow = _cv2.imshow
 
-# Ensure project root is on the path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import config
@@ -46,7 +44,7 @@ def setup_logging(verbose=False):
         format="%(asctime)s │ %(levelname)-7s │ %(name)-20s │ %(message)s",
         datefmt="%H:%M:%S",
     )
-    # Reduce noise from ultralytics
+    
     logging.getLogger("ultralytics").setLevel(logging.WARNING)
 
 
@@ -61,16 +59,13 @@ def run_pipeline(args):
     """Execute the full pipeline."""
     logger = logging.getLogger("neural_nexus")
 
-    # ── Ensure output directory ──────────────────────────────────────────
     output_dir = os.path.dirname(args.output) or config.OUTPUT_DIR
     os.makedirs(output_dir, exist_ok=True)
 
-    # ── Determine device ──────────────────────────────────────────────────
     import torch
     device = "cuda:0" if torch.cuda.is_available() and not args.cpu else "cpu"
     logger.info(f"Using device: {device}")
 
-    # ── Initialize pipeline components ────────────────────────────────────
     logger.info("Initializing pipeline components …")
 
     detector = MultiModelDetector(device=device)
@@ -91,14 +86,12 @@ def run_pipeline(args):
         threshold=config.SMOOTHING_THRESHOLD,
     )
 
-    # Frame extractor will set fps; use placeholder first
     event_engine = None
     behavior_engine = BehaviorEngine()
     metrics_computer = None
     visualizer = Visualizer() if args.visualize else None
     video_writer = None
 
-    # ── Open video source ─────────────────────────────────────────────────
     extractor = FrameExtractor(
         source=args.input,
         sample_rate=args.sample_rate,
@@ -108,10 +101,7 @@ def run_pipeline(args):
     with extractor:
         fps = extractor.fps or 30.0
         
-        # If live camera feed, default to 1 FPS capture (sustainable hardware rate) unless user forced something else explicitly.
         if getattr(extractor, "is_live", False):
-            # args.sample_rate could be the default (which is usually small). 
-            # This ensures processing matches 1 frame per second of live time.
             args.sample_rate = max(1, int(fps))
             logger.info(f"Live camera detected: Processing rate locked to exactly 1 frame per second "
                         f"(sampled every {args.sample_rate} original frames).")
@@ -122,7 +112,6 @@ def run_pipeline(args):
             window_seconds=10.0,
         )
 
-        # Set up video writer for visualization
         if visualizer and extractor.width > 0:
             vis_path = os.path.splitext(args.output)[0] + "_annotated.mp4"
             video_writer = Visualizer.create_video_writer(
@@ -130,7 +119,6 @@ def run_pipeline(args):
             )
             logger.info(f"Annotated video will be saved to: {vis_path}")
 
-        # Timeline for JSON output
         timeline = []
         frame_by_frame = []
         metrics_interval_frames = int(
@@ -149,20 +137,16 @@ def run_pipeline(args):
         for frame_num, timestamp, frame in extractor:
             frame_count += 1
 
-            # ── Stage 1: Detection ────────────────────────────────────
             det_result = detector.detect(frame)
             total_inference_ms += det_result["inference_time_ms"]
 
             person_dets = det_result["person_detections"]
             activity_dets = det_result["activity_detections"]
 
-            # ── Stage 2: Tracking ─────────────────────────────────────
             tracked_entities = tracker.update(person_dets, activity_dets, frame=frame)
 
-            # ── Stage 3: Temporal Smoothing ───────────────────────────
             smoothed_entities = smoother.update(tracked_entities)
 
-            # ── Stage 4: Determine teacher state (for event conditions) ─
             teacher_present = any(
                 "teacher" in e.get("confirmed_activities", {})
                 for e in smoothed_entities
@@ -173,7 +157,6 @@ def run_pipeline(args):
                 for e in smoothed_entities
             )
 
-            # ── Stage 5: Event Extraction ─────────────────────────────
             events = event_engine.extract_events(
                 smoothed_entities,
                 timestamp=timestamp,
@@ -182,16 +165,13 @@ def run_pipeline(args):
             )
             event_summary = event_engine.get_event_summary(events)
 
-            # ── Stage 6: Behavior Inference ───────────────────────────
             behavior_result = behavior_engine.infer(
                 smoothed_entities, events, event_summary
             )
 
-            # ── Stage 7: Metrics Computation ──────────────────────────
             metrics = metrics_computer.update(smoothed_entities,
                                               behavior_result)
 
-            # ── Stage 8: Record frame-by-frame and snapshot ───────────
             frame_by_frame.append({
                 "frame": frame_num,
                 "timestamp": round(timestamp, 2),
@@ -224,7 +204,6 @@ def run_pipeline(args):
                 }
                 timeline.append(snapshot)
 
-            # ── Visualization ─────────────────────────────────────────
             if visualizer:
                 vis_frame = visualizer.annotate_frame(
                     frame,
@@ -237,13 +216,11 @@ def run_pipeline(args):
                 if video_writer:
                     video_writer.write(vis_frame)
                 
-                # Live View Window
                 _original_imshow("Neural Nexus Live View", vis_frame)
                 if _cv2.waitKey(1) & 0xFF == ord('q'):
                     logger.info("Live View closed by user 'q' key. Stopping processing...")
                     break
 
-            # ── Progress logging ──────────────────────────────────────
             if frame_count % 50 == 0:
                 elapsed = time.time() - t_start
                 fps_actual = frame_count / max(elapsed, 0.001)
@@ -258,12 +235,10 @@ def run_pipeline(args):
                     f"{fps_actual:.1f} FPS"
                 )
 
-    # ── Cleanup ───────────────────────────────────────────────────────────
     if video_writer:
         video_writer.release()
         logger.info(f"Saved annotated video: {vis_path}")
 
-    # ── Build final output ────────────────────────────────────────────────
     elapsed = time.time() - t_start
     aggregate = metrics_computer.get_aggregate_metrics()
 
@@ -283,7 +258,6 @@ def run_pipeline(args):
         "aggregate": aggregate,
     }
 
-    # ── Save JSON output ──────────────────────────────────────────────────
     with open(args.output, "w") as f:
         json.dump(output, f, indent=2)
 
@@ -298,7 +272,6 @@ def run_pipeline(args):
     logger.info(f"  Output saved to: {args.output}")
     logger.info("=" * 60)
 
-    # Print summary to stdout
     print(f"\n{'─' * 50}")
     print(f"  NEURAL NEXUS — Results Summary")
     print(f"{'─' * 50}")

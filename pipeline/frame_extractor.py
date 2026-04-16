@@ -40,7 +40,6 @@ class FrameExtractor:
         self.height = 0
         self.is_live = False
         
-        # Threading for live feeds
         self._thread = None
         self._latest_frame = None
         self._running = False
@@ -54,7 +53,7 @@ class FrameExtractor:
             src = int(self.source)
             self._cap = cv2.VideoCapture(src)
             self.fps = self._cap.get(cv2.CAP_PROP_FPS) or 30.0
-            self.total_frames = 0  # Unknown for live feed
+            self.total_frames = 0
             self.is_live = True
             logger.info(f"Opened webcam {src} @ {self.fps:.1f} FPS (Multi-threaded)")
         else:
@@ -122,7 +121,6 @@ class FrameExtractor:
                 with self._lock:
                     frame = self._latest_frame
                 if frame is None:
-                    # Wait briefly for camera to warm up
                     time.sleep(0.01)
                     continue
                 ret = True
@@ -132,7 +130,6 @@ class FrameExtractor:
             if not ret:
                 break
 
-            # Apply sample rate
             if frame_idx % self.sample_rate == 0:
                 timestamp = frame_idx / self.fps if self.fps > 0 else 0.0
                 yield frame_idx, timestamp, frame

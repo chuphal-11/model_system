@@ -7,19 +7,10 @@ All tunable parameters, model paths, and rule definitions live here.
 
 import os
 
-# ---------------------------------------------------------------------------
-# Paths
-# ---------------------------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.path.join(BASE_DIR, "models")
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 
-# ---------------------------------------------------------------------------
-# Model Registry
-# ---------------------------------------------------------------------------
-# Each entry maps a model file to its known class names (extracted from the
-# binary .pt files).  The order of class names matches the index the model
-# outputs (0, 1, 2 …).
 MODEL_REGISTRY = {
     "2_BlackBoard_Sreen_Teacher.pt": {
         "classes": ["screen", "blackBoard", "teacher"],
@@ -63,37 +54,20 @@ MODEL_REGISTRY = {
     },
 }
 
-# Person detector (COCO pre-trained YOLOv8n) — used for counting & tracking
 PERSON_DETECTOR = "yolov8n.pt"
-PERSON_CLASS_ID = 0  # 'person' in COCO
+PERSON_CLASS_ID = 0
 PERSON_CONFIDENCE_THRESHOLD = 0.30
 
-# ---------------------------------------------------------------------------
-# Frame Extraction
-# ---------------------------------------------------------------------------
-# Process every Nth frame (1 = every frame, 2 = every other frame, etc.)
 FRAME_SAMPLE_RATE = 1
-# Maximum frames to process (None = all)
 MAX_FRAMES = None
 
-# ---------------------------------------------------------------------------
-# Tracking (SORT)
-# ---------------------------------------------------------------------------
-TRACKER_MAX_AGE = 30          # Frames before a lost track is deleted
-TRACKER_MIN_HITS = 3          # Minimum detections before track is confirmed
-TRACKER_IOU_THRESHOLD = 0.3   # IoU threshold for associating detections
+TRACKER_MAX_AGE = 30
+TRACKER_MIN_HITS = 3
+TRACKER_IOU_THRESHOLD = 0.3
 
-# ---------------------------------------------------------------------------
-# Temporal Smoothing
-# ---------------------------------------------------------------------------
-SMOOTHING_WINDOW_SIZE = 15    # Number of frames in the sliding window
-SMOOTHING_THRESHOLD = 0.60    # Fraction of window where activity must appear
-                               # to be confirmed (e.g., 9 out of 15 frames)
+SMOOTHING_WINDOW_SIZE = 15
+SMOOTHING_THRESHOLD = 0.60
 
-# ---------------------------------------------------------------------------
-# Event Extraction Rules
-# ---------------------------------------------------------------------------
-# Duration thresholds (in seconds) before a detection becomes an event
 EVENT_RULES = {
     "student_wants_to_answer": {
         "required_activity": "hand-raising",
@@ -134,9 +108,6 @@ EVENT_RULES = {
     },
 }
 
-# ---------------------------------------------------------------------------
-# Behavior Inference Rules
-# ---------------------------------------------------------------------------
 BEHAVIOR_RULES = {
     "interactive": {
         "conditions": {
@@ -181,9 +152,6 @@ BEHAVIOR_RULES = {
     },
 }
 
-# ---------------------------------------------------------------------------
-# Metrics Weights
-# ---------------------------------------------------------------------------
 ENGAGEMENT_WEIGHTS = {
     "hand-raising": 0.35,
     "write": 0.30,
@@ -193,32 +161,25 @@ ENGAGEMENT_WEIGHTS = {
 
 DISRUPTION_WEIGHTS = {
     "stand": 0.35,
-    "talk": 0.40,  # side conversation only
+    "talk": 0.40,
     "no_activity": 0.25,
 }
 
-# ---------------------------------------------------------------------------
-# Output
-# ---------------------------------------------------------------------------
-# How often (in seconds) to emit a metrics snapshot in the timeline
 METRICS_INTERVAL_SEC = 5.0
 
-# ---------------------------------------------------------------------------
-# Visualization
-# ---------------------------------------------------------------------------
 VIS_BBOX_COLORS = {
-    "hand-raising": (0, 255, 0),      # Green
-    "read": (0, 200, 200),            # Cyan
-    "write": (0, 200, 200),           # Cyan
-    "talk": (0, 165, 255),            # Orange
-    "stand": (0, 0, 255),             # Red
-    "discuss": (255, 200, 0),         # Gold
-    "teacher": (255, 0, 128),         # Pink
-    "blackBoard": (128, 0, 255),      # Purple
-    "screen": (200, 200, 0),          # Yellow
-    "guide": (255, 100, 100),         # Light red
-    "answer": (100, 255, 100),        # Light green
-    "On-stage interaction": (255, 0, 255),  # Magenta
-    "blackboard-writing": (128, 0, 255),    # Purple
-    "person": (200, 200, 200),        # Gray
+    "hand-raising": (0, 255, 0),
+    "read": (0, 200, 200),
+    "write": (0, 200, 200),
+    "talk": (0, 165, 255),
+    "stand": (0, 0, 255),
+    "discuss": (255, 200, 0),
+    "teacher": (255, 0, 128),
+    "blackBoard": (128, 0, 255),
+    "screen": (200, 200, 0),
+    "guide": (255, 100, 100),
+    "answer": (100, 255, 100),
+    "On-stage interaction": (255, 0, 255),
+    "blackboard-writing": (128, 0, 255),
+    "person": (200, 200, 200),
 }

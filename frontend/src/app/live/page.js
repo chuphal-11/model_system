@@ -74,7 +74,6 @@ export default function LivePage() {
         </div>
 
         <div className={styles.layout}>
-          {/* Video Feed */}
           <div className={styles.feedContainer}>
             <div className={styles.feed}>
               {!connected && (
@@ -100,9 +99,7 @@ export default function LivePage() {
             </div>
           </div>
 
-          {/* Metrics Sidebar */}
           <div className={styles.sidebar}>
-            {/* State */}
             <div className={`${styles.sideCard} ${styles.sideCardDark}`}>
               <span className={styles.sideLabel}>CLASSROOM STATE</span>
               <span className={styles.sideStateValue}>
@@ -113,7 +110,6 @@ export default function LivePage() {
               </span>
             </div>
 
-            {/* Engagement */}
             <div className={styles.sideCard}>
               <span className={styles.sideLabel}>ENGAGEMENT</span>
               <span className={`${styles.sideValue} ${styles.green}`}>
@@ -127,7 +123,6 @@ export default function LivePage() {
               </div>
             </div>
 
-            {/* Participation */}
             <div className={styles.sideCard}>
               <span className={styles.sideLabel}>PARTICIPATION</span>
               <span className={`${styles.sideValue} ${styles.blue}`}>
@@ -141,7 +136,6 @@ export default function LivePage() {
               </div>
             </div>
 
-            {/* Disruption */}
             <div className={styles.sideCard}>
               <span className={styles.sideLabel}>DISRUPTION</span>
               <span className={`${styles.sideValue} ${styles.red}`}>
@@ -155,7 +149,6 @@ export default function LivePage() {
               </div>
             </div>
 
-            {/* Teacher Interaction */}
             <div className={styles.sideCard}>
               <span className={styles.sideLabel}>TEACHER INTERACTION</span>
               <span className={`${styles.sideValue} ${styles.yellow}`}>
@@ -169,7 +162,6 @@ export default function LivePage() {
               </div>
             </div>
 
-            {/* Tracked & Events */}
             <div className={styles.sideCard}>
               <span className={styles.sideLabel}>TRACKED PERSONS</span>
               <span className={styles.sideValue} style={{ color: "var(--text-primary)" }}>{tracked}</span>

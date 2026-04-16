@@ -34,13 +34,11 @@ class MetricsComputer:
         self.fps = fps
         self.window_size = int(fps * window_seconds)
 
-        # Sliding window buffers
         self._engagement_buffer = deque(maxlen=self.window_size)
         self._participation_buffer = deque(maxlen=self.window_size)
         self._disruption_buffer = deque(maxlen=self.window_size)
         self._teacher_interaction_buffer = deque(maxlen=self.window_size)
 
-        # Aggregation over the entire video
         self._total_frames = 0
         self._state_counts = defaultdict(int)
         self._cumulative_engagement = 0.0
@@ -61,16 +59,13 @@ class MetricsComputer:
         """
         self._total_frames += 1
 
-        # Track state distribution
         state = behavior_result.get("classroom_state", "idle")
         self._state_counts[state] += 1
 
-        # --- Engagement Score ---
         engagement = self._compute_engagement(smoothed_entities)
         self._engagement_buffer.append(engagement)
         self._cumulative_engagement += engagement
 
-        # --- Participation Rate ---
         student_signals = behavior_result.get("student_signals", {})
         total_students = max(student_signals.get("total", 0), 1)
         participating = student_signals.get("participating", 0)
@@ -78,18 +73,15 @@ class MetricsComputer:
         self._participation_buffer.append(participation)
         self._cumulative_participation += participation
 
-        # --- Disruption Index ---
         disruption = self._compute_disruption(smoothed_entities)
         self._disruption_buffer.append(disruption)
         self._cumulative_disruption += disruption
 
-        # --- Teacher Interaction Ratio ---
         teacher_signals = behavior_result.get("teacher_signals", {})
         teacher_interaction = 1.0 if teacher_signals.get("engaging") else 0.0
         self._teacher_interaction_buffer.append(teacher_interaction)
         self._cumulative_teacher_interaction += teacher_interaction
 
-        # Compute windowed metrics
         return self.get_current_metrics(behavior_result)
 
     def _compute_engagement(self, smoothed_entities):
@@ -118,9 +110,7 @@ class MetricsComputer:
         return 0.0
 
     def _compute_disruption(self, smoothed_entities):
-        """
-        Compute per-frame disruption index based on disruptive activities.
-        """
+        """Compute per-frame disruption index based on disruptive activities."""
         if not smoothed_entities:
             return 0.0
 
@@ -184,12 +174,10 @@ class MetricsComputer:
         """
         total = max(self._total_frames, 1)
 
-        # State distribution
         state_dist = {}
         for state, count in self._state_counts.items():
             state_dist[state] = round(count / total, 3)
 
-        # Find dominant state
         dominant_state = max(self._state_counts,
                             key=self._state_counts.get,
                             default="idle")

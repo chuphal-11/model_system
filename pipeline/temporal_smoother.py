@@ -33,11 +33,8 @@ class TemporalSmoother:
         self.threshold = threshold
         self.min_count = int(window_size * threshold)
 
-        # entity_id -> deque of activity dicts
-        # Each entry: {activity_name: confidence, ...}
         self._buffers = defaultdict(lambda: deque(maxlen=window_size))
 
-        # Track continuous duration for each entity's activities (in frames)
         self._activity_streaks = defaultdict(lambda: defaultdict(int))
 
     def update(self, tracked_entities):
@@ -73,10 +70,8 @@ class TemporalSmoother:
             active_ids.add(eid)
             activities = entity.get("activities", {})
 
-            # Add to buffer
             self._buffers[eid].append(activities)
 
-            # Update streaks
             for act_name in list(self._activity_streaks[eid].keys()):
                 if act_name not in activities:
                     self._activity_streaks[eid][act_name] = 0
@@ -85,7 +80,6 @@ class TemporalSmoother:
                     self._activity_streaks[eid].get(act_name, 0) + 1
                 )
 
-            # Compute smoothed state
             confirmed, stability, avg_conf = self._compute_smoothed(eid)
 
             results.append({
@@ -100,10 +94,8 @@ class TemporalSmoother:
                 "confirmed_track": entity.get("confirmed", False),
             })
 
-        # Clean up old entities
         stale_ids = set(self._buffers.keys()) - active_ids
         for sid in stale_ids:
-            # Keep for a while in case the track is temporarily lost
             if len(self._buffers[sid]) == 0:
                 del self._buffers[sid]
                 if sid in self._activity_streaks:
@@ -124,7 +116,6 @@ class TemporalSmoother:
         if not buffer:
             return set(), {}, {}
 
-        # Count occurrences and accumulate confidence for each activity
         activity_counts = defaultdict(int)
         activity_conf_sum = defaultdict(float)
 

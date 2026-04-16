@@ -5,7 +5,6 @@
 .title { font-size: 48px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; margin-bottom: 12px; }
 .subtitle { font-size: 16px; color: var(--text-secondary); max-width: 540px; line-height: 1.6; }
 
-/* Upload Zone */
 .uploadZone {
   border: 2px dashed var(--border);
   border-radius: var(--radius);
@@ -19,7 +18,6 @@
 .uploadTitle { font-size: 18px; font-weight: 700; letter-spacing: 0.06em; margin-bottom: 8px; }
 .uploadHint { font-size: 14px; color: var(--text-muted); }
 
-/* Processing */
 .processingCard {
   background: var(--bg-card);
   border: 2px solid var(--border-dark);
@@ -33,7 +31,6 @@
 .progressFill { height: 100%; background: var(--accent); border-radius: 4px; transition: width 0.5s; }
 .processInfo { font-size: 13px; color: var(--text-muted); margin-top: 12px; font-family: var(--font-mono); }
 
-/* Error */
 .errorCard {
   background: #fef2f2;
   border: 2px solid var(--danger);
@@ -54,7 +51,6 @@
 }
 .retryBtn:hover { background: var(--bg-dark); color: var(--text-inverse); }
 
-/* Results */
 .results { animation: fadeIn 0.5s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -93,7 +89,6 @@
   border-radius: var(--radius);
 }
 
-/* Distribution */
 .distCard {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -108,7 +103,6 @@
 .distFill { height: 100%; background: var(--bg-dark); border-radius: 4px; transition: width 1s; }
 .distPct { width: 50px; text-align: right; font-size: 13px; font-family: var(--font-mono); color: var(--text-muted); }
 
-/* Actions */
 .actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .downloadBtn {
   display: inline-block;

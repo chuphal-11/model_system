@@ -26,7 +26,6 @@ class BehaviorEngine:
       - teacher_signals: teaching, engagement, absence
     """
 
-    # Class-level constants for classroom states
     STATES = [
         "interactive", "collaborative", "focused_learning",
         "lecture_mode", "distracted", "uncontrolled", "idle",
@@ -64,7 +63,7 @@ class BehaviorEngine:
                     "at_board": bool,
                     "teaching_mode": str,
                 },
-                "signals": {  # raw signal values used for inference
+                "signals": {
                     "hand_raise_rate": float,
                     "read_write_rate": float,
                     "talk_rate": float,
@@ -73,22 +72,17 @@ class BehaviorEngine:
                 }
             }
         """
-        # Compute raw signals from entities
         signals = self._compute_signals(smoothed_entities, events,
                                         event_summary)
 
-        # Compute student categorization
         student_signals = self._categorize_students(smoothed_entities)
 
-        # Compute teacher state
         teacher_signals = self._analyze_teacher(smoothed_entities)
 
-        # Augment signals with teacher info
         signals["teacher_present"] = teacher_signals["present"]
         signals["teacher_engaging"] = teacher_signals["engaging"]
         signals["teacher_at_board"] = teacher_signals["at_board"]
 
-        # Determine classroom state
         classroom_state, state_confidence = self._determine_state(signals)
 
         return {
@@ -115,7 +109,6 @@ class BehaviorEngine:
                 "student_activity_rate": 0.0,
             }
 
-        # Count entities with specific confirmed activities
         hand_raisers = 0
         readers_writers = 0
         talkers = 0
@@ -141,12 +134,11 @@ class BehaviorEngine:
             if "stand" in confirmed:
                 standers += 1
 
-            # Count active if doing anything productive
             if confirmed and any(
                 a in confirmed for a in
                 ["hand-raising", "read", "write", "discuss"]
             ):
-                pass  # already counted
+                pass
             elif not confirmed:
                 inactive += 1
 
@@ -171,7 +163,6 @@ class BehaviorEngine:
         for entity in smoothed_entities:
             confirmed = entity.get("confirmed_activities", {})
 
-            # Skip teacher-specific entities
             if "teacher" in confirmed:
                 continue
 
@@ -210,7 +201,6 @@ class BehaviorEngine:
             if "teacher" in confirmed:
                 teacher_present = True
 
-            # Teacher behavior signals
             if "guide" in confirmed or "answer" in confirmed:
                 teacher_engaging = True
                 teaching_mode = "interactive"
@@ -242,7 +232,6 @@ class BehaviorEngine:
         Returns:
             (state_name, confidence)
         """
-        # Evaluate rules in priority order
         sorted_rules = sorted(self.rules.items(),
                               key=lambda x: x[1].get("priority", 99))
 
@@ -253,7 +242,6 @@ class BehaviorEngine:
             if match:
                 return state_name, confidence
 
-        # Default state
         return "idle", 0.5
 
     def _evaluate_behavior_rule(self, conditions, signals):
@@ -281,7 +269,6 @@ class BehaviorEngine:
                 op, threshold = expected
 
                 if op == ">" and actual > threshold:
-                    # Higher is more confident
                     confidence_sum += min(actual / max(threshold, 0.01), 2.0)
                     condition_count += 1
                 elif op == "<" and actual < threshold:
