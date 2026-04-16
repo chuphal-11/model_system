@@ -218,7 +218,7 @@ def run_pipeline(args):
                 
                 _original_imshow("Neural Nexus Live View", vis_frame)
                 if _cv2.waitKey(1) & 0xFF == ord('q'):
-                    logger.info("Live View closed by user 'q' key. Stopping processing...")
+                    logger.info("Live View closed by user 'q' key. Stopping processing....")
                     break
 
             if frame_count % 50 == 0:
