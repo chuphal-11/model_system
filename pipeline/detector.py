@@ -2,7 +2,7 @@
 Neural Nexus — Multi-Model Detector
 =====================================
 Manages all 8 YOLO models + the person detector.
-Runs each model on every frame and merges detections into a unified format.
+Runs each model on every frame and merges detections into a unified format using YOLO MODELS.
 """
 
 import os
