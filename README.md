@@ -5,7 +5,12 @@
 </div>
 
 ---
+###Before
+[![Watch Before](https://img.youtube.com/vi/r382uj94CcE/0.jpg)](https://youtu.be/r382uj94CcE)
 
+#After 
+###  After Implementation
+[![Watch After](https://img.youtube.com/vi/aJUulvMv0p4/0.jpg)](https://youtu.be/aJUulvMv0p4)
 ## Overview
 
 **Neural Nexus** is a production-grade inference system designed to monitor and analyze physical classroom environments. By utilizing a robust sequential computer vision pipeline, it transforms raw classroom video or live webcam feeds into structured, actionable intelligence including student engagement scores, disruptive event tracking, and overall classroom state assessment.
