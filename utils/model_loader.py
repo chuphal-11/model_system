@@ -1,6 +1,6 @@
 """
 Neural Nexus — Model Loader
-=============================
+===============================
 Handles loading custom YOLOv7 models that contain non-standard layers
 (MP, SPPCSPC, RepConv, IDetect, ImplicitA, ImplicitM, etc.).
 Falls back to ultralytics YOLO for standard models (yolov8n.pt).
