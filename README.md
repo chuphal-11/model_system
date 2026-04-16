@@ -120,6 +120,9 @@ graph LR
     M8 --> Dets
 ```
 
+
+[View ppt](./overclocked..pdf)
+
 ### 2. Entity Tracking (DeepSORT)
 To measure behavior over time, the system uses **DeepSORT (Simple Online and Realtime Tracking with a Deep Association Metric)**. Bounding boxes are filtered, matched with historical tracks using an IoU metric, and re-identified via a CNN Embedder (MobileNetV2 running on CPU to save critical GPU VRAM). 
 
