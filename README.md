@@ -18,7 +18,12 @@
 Built on **FastAPI (Backend)** and **Next.js (Frontend UI)**, Neural Nexus delivers real-time analytics to a web interface featuring a modern, NexArch-inspired aesthetic. 
 
 ---
+## SRS(Software Requirement Specification doc )
+Day 1 - EDA
+https://docs.google.com/document/d/1ZDjSuhVHuM9tPDvhjEzcA2cQQvtX7b1SMaqR6Y87znY/edit?tab=t.0
 
+Day 2 - Model Training 
+https://docs.google.com/document/d/1KgFbfxTKWfTZqfkgnfYljJv-9G4Kafuxr-AKYFu2rE8/edit?tab=t.0
 ## System Architecture
 
 The overarching system leverages a decoupled architecture. The frontend handles interactive file drops, status polling, and live video renders, while the FastAPI backend handles REST routing, WebSocket streaming, and asynchronous AI model processing.
