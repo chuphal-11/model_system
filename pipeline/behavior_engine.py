@@ -4,7 +4,7 @@ Neural Nexus — Behavior Inference Engine
 The core intelligence of the system. Combines multiple events across
 multiple individuals to infer the overall classroom state.
 
-Events → Classroom behavioral state
+Events → Classroom behavioral state engine
 """
 
 import logging
