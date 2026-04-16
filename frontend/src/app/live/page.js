@@ -168,7 +168,7 @@ export default function LivePage() {
               <div className={styles.eventsBox}>
                 {events.length > 0
                   ? events.map((e, i) => <span key={i} className={styles.eventTag}>{e}</span>)
-                  : <span className={styles.noEvents}>No active events</span>
+                  : <span className={styles.noEvents}>No active event</span>
                 }
               </div>
             </div>
