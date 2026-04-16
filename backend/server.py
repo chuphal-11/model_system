@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Neural Nexus — FastAPI Backend
-================================
+==================================
 REST API + WebSocket server for the AI Classroom Intelligence System.
 
 Features:
