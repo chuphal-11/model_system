@@ -168,7 +168,7 @@ DISRUPTION_WEIGHTS = {
 METRICS_INTERVAL_SEC = 5.0
 
 VIS_BBOX_COLORS = {
-    "hand-raising": (0, 255, 0),
+    "hand-raising -": (0, 255, 0),
     "read": (0, 200, 200),
     "write": (0, 200, 200),
     "talk": (0, 165, 255),
